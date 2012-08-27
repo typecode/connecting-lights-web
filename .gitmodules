@@ -4,3 +4,6 @@
 [submodule "hwBackend"]
 	path = hwBackend
 	url = git@github.com:ofZach/hwBackend.git
+[submodule "wp-content/themes/connecting-lights/js/lib"]
+	path = wp-content/themes/connecting-lights/js/lib
+	url = git@github.com:typecode/typecode-js.git
