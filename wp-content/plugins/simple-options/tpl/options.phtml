@@ -1,0 +1,90 @@
+<div class="wrap" id="simple-options-page">
+	
+	<form action="<?php print add_query_arg(null, null) ?>" method="post" enctype="multipart/form-data"  id="simple-options-form" >
+		
+	<div id="icon-options-general" class="icon32"><br></div>
+	
+	<h2 class="nav-tab-wrapper">
+		<?php _e('Theme Options', 'simple-options') ?> &nbsp;
+		<?php foreach(simple_options_get_pages() as $page_name => $page) : ?>
+			<a class="nav-tab" href="#<?php print $page_name ?>"><?php print $page['title'] ?></a>
+		<?php endforeach ?>
+		
+		<input type="submit" name="submit" id="submit" class="button-primary" value="Save Changes">
+	</h2>
+	
+	<?php if(simple_options_get_error() !== false) : ?>
+		<div id="message" class="error">
+			<p><strong><?php print simple_options_get_error()->getMessage() ?></strong></p>
+		</div>
+	<?php elseif(simple_options_is_updated() === true) : ?>
+		<div id="message" class="updated">
+			<p><?php printf(__('Theme Options Updated', 'simple-options')) ?></p>
+		</div>
+	<?php endif; ?>
+	
+	<?php foreach(simple_options_get_fields() as $page_name => $page) : ?>
+		<div class="options-page-container" id="page-<?php print $page_name ?>">
+			
+			<?php $i = 0; foreach($page as $field_name => $field) : $class_name = 'SimpleOptionsField_'.ucfirst($field['type']); ?>
+				<?php
+					
+					$separator = simple_options_get_section_title($page_name, $field_name);
+					if(!empty($separator)){
+						if($i != 0) { ?></tbody></table><?php }
+						?><h3 class="title"><?php print $separator ?></h3><table class="form-table simple-options"><tbody><?php
+					}
+					elseif($i == 0) { ?><table class="form-table simple-options"><tbody><?php }
+				
+					$error = simple_options_get_error(); 
+					$field_error = (
+						$error !== false &&
+						$error->getPage() == $page_name &&
+						$error->getField() == $field_name
+					);						
+				?>
+				<tr valign="top" <?php if($field_error || !class_exists($class_name)) print 'class="field-error"' ?>
+					<?php if(isset($field['show_if'])) print 'data-show-if="'.$field['show_if'].'"' ?>
+					>
+					<th scope="row">
+						<label for="<?php print 'field_'.$page_name.'_'.$field_name ?>">
+							<?php
+								print empty($field['title']) ? $field_name : $field['title'];
+								if(!empty($field['description'])) {
+									?><br /><small class="description"><?php print $field['description'] ?></small><?php
+								}
+							?>
+						</label>
+					</th>
+					<td class="type-<?php print strtolower($field['type']) ?>">
+						<?php
+						$name = 'options['.$page_name.']['.$field_name.']';
+						if(isset($_POST['_options_nonce']) && class_exists($class_name)){
+							$value = call_user_func(array($class_name, 'post_to_value'), isset($_POST[$page_name][$field_name]) ? $_POST[$page_name][$field_name] : null);
+						}
+						else{
+							$value = isset($values[$page_name][$field_name]) ? $values[$page_name][$field_name] : null; 
+						}
+						
+						if(class_exists($class_name)){
+							call_user_func(
+								array($class_name, 'render'),
+								$name,
+								preg_replace('/[\[\]]+/', '_', 'field_' . $name),
+								$value,
+								$field
+							);
+						}
+						else{
+							?><strong>UNIMPLEMENTED TYPE: <?php print $field['type'] ?></strong><?php
+						}
+						?>
+					</td>
+				</tr>
+			<?php $i++; endforeach; ?>
+			</tbody></table>
+		</div>
+	<?php endforeach; ?>
+	<?php wp_nonce_field('save', '_simpleoptions_nonce') ?>
+	</form>
+</div> 

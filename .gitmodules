@@ -1,0 +1,6 @@
+[submodule "mobileapp"]
+	path = mobileapp
+	url = git@github.com:typecode/connecting-lights-mobile.git
+[submodule "hwBackend"]
+	path = hwBackend
+	url = git@github.com:ofZach/hwBackend.git
