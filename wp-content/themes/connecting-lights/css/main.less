@@ -773,7 +773,7 @@ textarea {
 		.date, .sep { float: left; }
 
 		.date {
-			line-height: 1.6em;
+			line-height: 1.5em;
 			font-weight: 500;
 
 			span {
@@ -800,10 +800,24 @@ textarea {
 
 		}
 
+		.dusk-til-witchinghour {
+			.dagny;
+			display: block;
+			width: 100%;
+			font-size: 14px;
+			padding-top: 5px;
+			font-weight: 500;
+			color: fadeOut(@copy-color, 25);
+
+			.light {
+				color: fadeOut(@copy-color, 75);
+			}
+		}
+
 		.sep {
 			font-size: 36px;
-			line-height: 2.5em;
-			margin-left: .25em;
+			margin-top: 0.9em;
+			margin-left: 0.25em;
 		}
 
 	}
@@ -1061,6 +1075,46 @@ textarea {
 					opacity: 0.75; 
 				}
 			}
+		}
+
+		h2.twitter {
+			margin-top: 90px;
+			margin-bottom: 30px;
+			margin-left: -3px;
+		}
+
+		.twtr-widget {
+			//margin-left: 18px;
+			width: 314px !important;
+		}
+
+		.twtr-hd { 
+			padding: 0 0 6px 0; 
+		}
+
+		.twtr-tweet-wrap {
+			padding-left: 0;
+			padding-right: 50px;
+		}
+
+		.twtr-widget .twtr-tweet {
+			border-bottom: 1px solid #eee;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		#twtr-widget-1 .twtr-tweet .twtr-tweet-text em a {
+			color: @gray1 !important;
+
+			&:hover {
+				color: @accent !important;
+			}
+		}
+
+		.twtr-ft {
+			display: none;
 		}
 
 	}
@@ -1476,6 +1530,31 @@ p + .ngg-galleryoverview .slideshowlink {
 /*  Mobile
 =============================================================================== */
 
+body.mobile-redirect {
+	text-align: center;
+	background: black;
+
+	.ca-button {
+		margin: 1em auto 0;
+		display: block;
+	}
+
+	> .inner {
+		z-index: 2;
+		position: relative;
+		padding: 3em 1em 0;
+	}
+
+	.image {
+		z-index: 1;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+
+}
+
 body.mobile {
 	font-size: 17px;
 	line-height: 21px;
@@ -1561,22 +1640,16 @@ body.mobile {
 	
 		.connect,
 		.schedule,
-		nav { display: none; }
-	
-		.mobile-nav {
+		nav,
+		.mobile-nav { display: none; }
+		
+		.mobile-select {
 			position: relative;
 			float: right;
 			margin-right: 14px;
 			width: 104px;
-			font-size: 15px;
+			font-size: 14px;
 			line-height: 1em;
-			overflow: hidden;
-		}
-		
-		.mobile-select {
-			display: block;
-			position: absolute;
-			left: -9999px;
 		}
 	
 	}
@@ -1729,9 +1802,8 @@ body.mobile {
 		}
 	
 		.send-message-compose {
+			padding-bottom: 155px;
 			text-shadow: 0px -1px 0px rgba(0,0,0,.75);
-			height: 100%;
-			padding-bottom: 120px;
 	
 			.tc-field {
 				float: none;

@@ -15,7 +15,11 @@
 	<div class="step send-message-info">
 		<h2>Your message will travel across Hadrian's Wall in the form of pulses of light.</h2>
 
+		<?php if (! CL_MOBILE) { ?>
+
 		<p>Prior to the event, we're collecting messages which will pre-populate the messaging system and be some of the first ones to be seen by the public.</p>
+
+		<?php } ?>
 
 		<p>We've come up with some sentences about connection we'd love for you to fill out, or feel free to make the message your own.</p>
 
@@ -103,27 +107,18 @@
 	</a>
 
 	<?php
-		$visit_page = get_page_by_title("visiting");
+		$visit_page = get_page_by_title("Visit");
 		$visit_url;
 		if ($visit_page) {
 			$visit_url = get_permalink($visit_page->ID);
 		} else {
 			$visit_url = "#";
 		}
-		
-		$connector_page = get_page_by_title("connector");
-		$connector_url;
-		if ($connector_page) {
-			$connector_url = get_permalink($connector_page->ID);
-		} else {
-			$connector_url = "#";
-		}
-
 	?>
-	<a href="<?php echo $connector_url; ?>">
+	<a href="<?php echo $visit_url; ?>">
 		<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" alt="Purchase Tickets" />
 		<div>
-			<small>become a</small> connector
+			<small>help</small> volunteer
 		</div>
 	</a>
 	<a href="<?php echo $visit_url; ?>">

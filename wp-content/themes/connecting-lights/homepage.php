@@ -106,7 +106,7 @@ get_header();
 						</a>
 					</li>
 					<li>
-						<a href="http://www.hadrians-wall.org/" target="_blank">
+						<a href="hadrians-wall.org" target="_blank">
 							<img src="<?php bloginfo("template_url"); ?>/img/logos/hadrian-un-combined.png" />
 						</a>
 					</li>
@@ -122,6 +122,38 @@ get_header();
 					</li>
 
 				</ul>
+
+				<div class="twit-widget">
+					<h2 class="lighter twitter">Twitter</h2>
+					<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+					<script>
+						new TWTR.Widget({
+							version: 2,
+							type: 'profile',
+							rpp: 4,
+							interval: 30000,
+							width: 'auto',
+							height: 300,
+							theme: {
+								shell: {
+									background: '#ffffff',
+									color: '#8c8c8c'
+								},
+								tweets: {
+									background: '#ffffff',
+									color: '#666666',
+									links: '#8accb0'
+								}
+							},
+							features: {
+								scrollbar: false,
+								loop: false,
+								live: false,
+								behavior: 'all'
+							}
+						}).render().setUser('connectinglight').start();
+					</script>
+				</div>
 			</div>
 
 		</div>

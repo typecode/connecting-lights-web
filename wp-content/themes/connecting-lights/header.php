@@ -5,28 +5,45 @@ global $post;
 $current_id = $post->ID;
 
 $mobile_id = get_page_by_title("mobile")->ID;
-$visit_id = get_page_by_title("visit")->ID;
-$about_id = get_page_by_title("about")->ID;
+$redirect_id = get_page_by_title("redirect")->ID;
 
-if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
+define("CL_MOBILE", $_COOKIE["cl_cookie"]);
 
-	$mobile_agents = '!(phone|ipod|android)!i';
+if (! isset($_COOKIE["cl_cookie"]) ) {
 
-	if ( preg_match($mobile_agents, $_SERVER['HTTP_USER_AGENT']) ) {
-	
-		define("CL_MOBILE", true);
-		
-		if (!( is_page( array($mobile_id, $visit_id, $about_id) ) )) {
+	include(TEMPLATEPATH . "/incl/mobile-detect.php");
 
-			header("Location: ". get_permalink( $mobile_id ));
-		
-		}
+	$detect = new Mobile_Detect();
+
+	if ( $detect->isMobile() ) {
+
+		setcookie("cl_cookie", 1, time()+3600);
+
+		header("Location: ". get_permalink($redirect_id));
+
+		exit();
 
 	} else {
-		
-		define("CL_MOBILE", false);
-		
+
+		setcookie("cl_cookie", 0, time()+3600);
+
 	}
+
+}
+
+if ( CL_MOBILE && is_front_page() ) {
+
+	header("Location: ". get_permalink($mobile_id));
+
+	exit();
+
+}
+
+if ( is_page($mobile_id) && (! CL_MOBILE) ) {
+
+	header("Location: ". get_bloginfo('url'));
+
+	exit();
 
 }
 
@@ -129,8 +146,8 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 				}
 			
 				$mobile_pages_args = array(
-					'numberposts'     => -1,
-					'include'         => array($mobile_id, $visit_id, $about_id),
+					'numberposts' => -1,
+					'post_status' => 'publish'
 				); 
 			
 				$mobile_pages = get_pages( $mobile_pages_args );
@@ -142,33 +159,54 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 			</div>
 			<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'>
 				<option value=""><?php echo mobile_title(); ?></option>
-			<?php
-				$options = '';
-				foreach ( $mobile_pages as $page ) {
-					if ( $page->ID != $current_id ) {
-						$options .= '<option value="' . get_page_link( $page->ID ) . '">';
-						if ($page->ID != $mobile_id ) {
-							$options .= $page->post_title;
-						} else {
-							$options .= 'Participate';
+				<?php 
+
+				    $menu_name = 'mobile_nav';
+
+				    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+
+						$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+
+						$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+						foreach ( (array) $menu_items as $key => $menu_item ) {
+							$title = $menu_item->title;
+						    $url = $menu_item->url;
+						    $id = $menu_item->object_id;
+
+						    if ($id != $current_id) {
+
+								if ($title == 'Mobile') {
+									$title = 'Participate';
+								}
+							    
+							    $menu_list .= '<option value="'. $url .'">'. $title .'</option>';
+
+							}
 						}
-						$options .= '</option>';
-					}
-				}
-				echo $options;
-			?>
+
+						echo $menu_list;
+
+				    }
+
+				?>
 			</select>
 			<?php } ?>
 			
 			<div class="schedule">
-				<div class="date">
-					<span class="month">Aug</span>
-					<span class="day">31</span>
+				<div class="clearfix">
+					<div class="date">
+						<span class="month">Aug</span>
+						<span class="day">31</span>
+					</div>
+					<div class="sep">+</div>
+					<div class="date">
+						<span class="month">Sept</span>
+						<span class="day">1</span>
+					</div>
 				</div>
-				<div class="sep">+</div>
-				<div class="date">
-					<span class="month">Sept</span>
-					<span class="day">1</span>
+				<div class="dusk-til-witchinghour">
+					<span class="light">&#124;</span> dusk until midnight <span class="light">&#124;</span>
 				</div>
 			</div>
 			
