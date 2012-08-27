@@ -36,3 +36,5 @@ wp-content/uploads/
 /wp-content/themes/uber.zip
 /wp-content/themes/uber/
 /wp-includes-3.4/
+
+/.DS_Store
