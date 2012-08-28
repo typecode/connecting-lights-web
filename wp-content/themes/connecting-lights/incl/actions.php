@@ -6,7 +6,7 @@
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
 			color_picker_src: "<?php bloginfo("template_url"); ?>/img/color-picker.png",
-			service_url: "<?php bloginfo("url"); ?>/hwBackend/api/add.php"
+			service_url: "/connecting-lights-backend/messages.json"
 		});
 	});
 </script>
