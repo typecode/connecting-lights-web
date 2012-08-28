@@ -1,5 +1,7 @@
 <?php
 
+define("CL_IS_LIVE", (get_option('cl_is_live') == '1') ? 1 : 0);
+
 global $post;
 
 $current_id = $post->ID;

@@ -2,6 +2,7 @@
 	page.features.push(function(app) {
 		app.runtime.sendMessage = new page.classes.SendMessage({
 			app: app,
+			is_live_stream: <?php if (CL_IS_LIVE) { echo "true"; } else { echo "false"; } ?>,
 			is_mobile: <?php if (CL_MOBILE) { echo "true"; } else { echo "false"; } ?>,
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
