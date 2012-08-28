@@ -1,0 +1,86 @@
+html {
+	width:					100%;
+	height:					100%;
+	margin:					100px;
+	font-family: "brandon-grotesque";
+}
+
+body {
+	font style="color: #ffffff;"
+	position:				absolute;
+	left:					0px;
+	right:					0px;
+	top:					0px;
+	bottom:					0px;
+	min-width:				800px;
+	background-color:		#333;
+	margin:					0px auto;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, li, td {
+	font-size:				30px;
+	line-height:  			130%;
+}
+
+chars_left 
+{ 
+	padding: 9px;
+	border:none;
+	outline: 0;
+	font-size: 30px;
+	width: 100px;
+	background-color: #ccc;
+	}
+	
+
+input, textarea { 
+	padding: 9px;
+	border: none 0px #333;
+	outline: 0;
+	font-size: 30px;
+	width: 250px;
+	background-color: #333;
+	color: white;
+	}
+	
+textarea { 
+	width: 800px;
+	max-width: 100%;
+	height: 90px;
+	line-height: 100%;
+	border: none 0px #333;
+	background-color: #333;
+	}
+
+#prompt-container {
+	position: relative;
+}
+
+#prompt-float {
+	background: #333;
+	line-height: 100%;
+	position: absolute;
+	left: 9px;
+	top: 9px;
+	color: rgb(138,204,177);
+}
+
+#countdown {
+	font-size: 20px
+}
+
+.form label { 
+	margin-left: 10px; 
+	color: #999999; 
+	}
+
+.submit input {
+	width: auto;
+	padding: 9px 15px;
+	background: #617798;
+	border: 0;
+	font-size: 14px;
+	color: #FFFFFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	}

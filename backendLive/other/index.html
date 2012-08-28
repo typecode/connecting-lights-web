@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  
+  <title></title>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="css/style.css" />
+  
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="demos ">
+  <section id="content">
+
+
+<div id="container" class="clearfix">
+
+	<div class="box col2">
+	    <p>Sit amet mi ullamcorper vehicula</p>
+	  </div>
+
+	  <div class="box col2">
+	    <p>Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+	  </div>
+
+</div> <!-- #container -->
+
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/jquery.masonry.min.js"></script>
+<script>
+  
+
+$(document).ready(function(){
+
+
+		var $container = $('#container');
+		
+        $.getJSON('../api/?op=json', function(data) {
+            
+			var boxes = [];
+			var count = 2;
+			$.each(data.messages, function(i,data)
+			{
+			
+			//var $div_data =
+			//"<div class=\"box col1 masonry-brick\"><p>"+data.m+"</p></div>";
+			
+			
+			var box = document.createElement('div');
+			var p = document.createElement("p");
+		    text = document.createTextNode(  data.m  );
+		    box.className = 'box col2';
+			count = count + 1;
+		    p.appendChild( text );
+			box.appendChild(text);
+			//boxes.push(box);
+			$container.append(box);
+			});
+			
+			
+			$container.masonry({
+		      itemSelector: '.box',
+		      columnWidth: 100,
+		    });
+			
+		
+        });
+
+
+
+	 
+	 
+
+});
+
+</script>
+
+    
+    
+    
+  </section> <!-- #content -->
+
+</body>
+</html>

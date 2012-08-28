@@ -4,7 +4,6 @@ wp-content/uploads/
 .htaccess*
 .htaccess~
 /backendDev/
-/backendLive/
 /css/
 /images/
 /js/
