@@ -17,7 +17,15 @@ if (! isset($_COOKIE["cl_cookie"]) ) {
 
 	if ( $detect->isMobile() ) {
 
-		setcookie("cl_cookie", 1, time()+3600);
+		if (! $detect->isTablet() ) {
+
+			setcookie("cl_cookie", 1, time()+3600);
+
+		} else {
+
+			setcookie("cl_cookie", 0, time()+3600);
+
+		}
 
 		header("Location: ". get_permalink($redirect_id));
 
