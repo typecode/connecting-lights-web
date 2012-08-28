@@ -1151,7 +1151,6 @@ article .content {
 /*  Color picker
 =============================================================================== */
 .color-picker {
-  display: none;
   position: relative;
   float: left;
   -webkit-tap-highlight-color: transparent;

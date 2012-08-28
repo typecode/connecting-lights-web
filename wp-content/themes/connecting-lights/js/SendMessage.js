@@ -25,6 +25,11 @@
 			$e: null,
 			selector: "",
 			$trigger: null,
+			use_color_picker: (function() {
+				// only use color picker if canvas is supported
+				var canvas = document.createElement("canvas");
+				return !!(canvas.getContext && canvas.getContext("2d"));
+			}()),
 			color_picker_src: "",
 			bg_desaturation: 0.6,
 			prompts: ($.isArray(page.classes.prompts) ? page.classes.prompts : []),
@@ -169,6 +174,9 @@
 								},
 								handlers: {
 									focus: function(e) {
+										// old code for removing trailing ellipsis
+										// in a prompt on focus
+
 										/*var field, val;
 										field = e.data.me;
 										val = field.get_val();
@@ -196,11 +204,13 @@
 							$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
 						}
 
-						if (internal.is_mobile) {
+						if (o.use_color_picker) {
 							internal.colorpicker = new page.classes.ColorPicker({
 								$e: $colorpicker,
 								src: o.color_picker_src
 							});
+						} else {
+							$colorpicker.hide();
 						}
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
