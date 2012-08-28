@@ -32,6 +32,12 @@
 function get_option( $option, $default = false ) {
 	global $wpdb;
 
+	if ($option == "siteurl" || $option == "home") {
+		if (defined("MY_LOCAL_SITEURL")) {
+			return MY_LOCAL_SITEURL;
+		}
+	}
+
 	// Allow plugins to short-circuit options.
 	$pre = apply_filters( 'pre_option_' . $option, false );
 	if ( false !== $pre )
