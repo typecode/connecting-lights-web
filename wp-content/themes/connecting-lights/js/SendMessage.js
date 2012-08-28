@@ -94,7 +94,7 @@
 			},
 			set_prompt: function() {
 				var prompt = internal.prompts[internal.prompts_index];
-				internal.merlin.internal.steps["compose"].fields["m"].component.set_val(prompt);
+				internal.merlin.internal.steps["compose"].fields["message[message]"].component.set_val(prompt);
 			},
 			get_bg_css: function(r, g, b) {
 				var hsv;
@@ -135,9 +135,9 @@
 				g = d.g;
 				b = d.b;
 
-				merlin.set_val("r", r);
-				merlin.set_val("g", g);
-				merlin.set_val("b", b);
+				merlin.set_val("message[red]", r);
+				merlin.set_val("message[green]", g);
+				merlin.set_val("message[blue]", b);
 
 				e.data.container.css({
 					"background-color": fn.get_bg_css(r, g, b)
@@ -156,11 +156,10 @@
 				data: new NI.MerlinData({
 					uri: o.service_url,
 					data: {
-						m: "",
-						//q: null, //question ID
-						r: null,
-						g: null,
-						b: null
+						"message[message]": "",
+						"message[red]": null,
+						"message[green]": null,
+						"message[blue]": null
 					}
 				})
 			},
@@ -175,7 +174,7 @@
 					// next: internal.is_mobile ? "geo" : "dispatch",
 					next: "dispatch",
 					fields: {
-						"m": {
+						"message[message]": {
 							selector: "textarea[name=m]",
 							options: {
 								extensions: {

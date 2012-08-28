@@ -38,6 +38,51 @@ register_nav_menus(
 	)
 );
 
+function cl_live_stream_settings_menu() {
+	add_options_page("Live Stream Settings", "Live Stream Settings", "manage_options", "live_stream", "cl_live_stream_settings_render");
+}
+add_action("admin_menu", "cl_live_stream_settings_menu");
+
+function cl_live_stream_settings_render() {
+	if (!function_exists("current_user_can") || !current_user_can("manage_options")) {
+			die("RESTRICTED");
+	}
+	?>
+		<div class="wrap">
+			<h2>Live Stream Settings</h2>
+			<p>When live stream mode is on, the homepage will display a live video feed of Connecting Light in place of image carousel.</p>
+			<form method="post" action="options.php">
+				<table>
+					<?php settings_fields("live_stream"); ?>
+					<tbody>
+						<tr valign="baseline" colspan="2">
+							<td>
+								<?php $check = get_option('cl_is_live') == '1' ? ' checked="yes" ' : ''; ?>
+								<input type="checkbox" id="cl_is_live" name="cl_is_live" value="1" <?php echo $check; ?> />
+								<label for="cl_is_live"><strong>Live stream on?</strong></label>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="submit">
+					<input type="submit" value="Save Changes" name="Submit">
+				</p>
+			</form>
+		</div>
+
+	<?php
+}
+
+function cl_live_stream_settings_init() {
+	register_setting("live_stream", "cl_is_live", "cl_bool_to_int");
+	add_option("cl_is_live", 0);
+}
+add_action("admin_init", "cl_live_stream_settings_init");
+
+function cl_bool_to_int($v) {
+	return $v == 1 ? '1' : '0';	
+}
+
 
 
 //^^^^^ body class ^^^^^
