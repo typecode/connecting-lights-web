@@ -51,6 +51,9 @@
 
 		fn = {
 			init: function() {
+				// initializing the color picker as early as possible to
+				// decrease lag when the color picker image is still loading
+				fn.init_color_picker();
 
 				internal.is_touch = (("ontouchstart" in window) || (window.DocumentTouch && document instanceof DocumentTouch));
 
@@ -76,6 +79,17 @@
 				} else {
 					shuffle(internal.prompts);
 					internal.prompts_index = 0;
+				}
+			},
+			init_color_picker: function() {
+				var $colorpicker = internal.$e.find(".color-picker");
+				if (o.use_color_picker) {
+					internal.colorpicker = new page.classes.ColorPicker({
+						$e: $colorpicker,
+						src: o.color_picker_src
+					});
+				} else {
+					$colorpicker.hide();
 				}
 			},
 			set_prompt: function() {
@@ -202,15 +216,6 @@
 							$colorpicker.on("color:picked", {container: $("body")}, handlers.color_picked);
 						} else {
 							$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
-						}
-
-						if (o.use_color_picker) {
-							internal.colorpicker = new page.classes.ColorPicker({
-								$e: $colorpicker,
-								src: o.color_picker_src
-							});
-						} else {
-							$colorpicker.hide();
 						}
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
