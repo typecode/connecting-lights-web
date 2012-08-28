@@ -1,7 +1,7 @@
 .dagny{font-family:"ff-dagny-web-pro",sans-serif;}
 .garaje{font-family:"Garaje53UnicaseBlack",sans-serif;}
 h1{font-family:"Garaje53UnicaseBlack",sans-serif;color:#333333;font-size:46px;line-height:54px;letter-spacing:-1px;text-transform:uppercase;}
-h2{font-family:"ff-dagny-web-pro",sans-serif;font-weight:400;color:#333333;font-size:36px;line-height:1em;}h2.lighter{color:#cccccc;}
+h2{font-family:"ff-dagny-web-pro",sans-serif;font-weight:400;color:#333333;font-size:36px;line-height:1em;}h2.lighter{color:#939393;}
 h3{font-family:"ff-dagny-web-pro",sans-serif;font-weight:900;font-size:23px;line-height:27px;}
 h4{font-family:"ff-dagny-web-pro",sans-serif;font-weight:700;font-size:18px;line-height:1;color:#8accb1;}
 a{text-decoration:none;color:#8accb1;}a:hover{text-decoration:underline;}
@@ -121,7 +121,7 @@ textarea{resize:none;}
 .home .inverted .posts .post h3{margin-top:0;font-size:20px;line-height:1.2;}
 .home .inverted .partners{float:left;width:262px;margin-left:94px;}.home .inverted .partners li{padding:18px 0 0 18px;margin:0 0 18px 0;border:1px solid #eee;border-bottom:none;border-right:none;width:295px;}.home .inverted .partners li img{display:block;height:42px;opacity:0.5;}
 .home .inverted .partners li:hover{border-color:#8accb1;}.home .inverted .partners li:hover img{opacity:0.75;}
-.home .inverted .partners h2.twitter{margin-top:90px;margin-bottom:30px;margin-left:-3px;}
+.home .inverted .partners h2.twitter{margin-top:90px;margin-bottom:18px;margin-left:-3px;}.home .inverted .partners h2.twitter .small{font-size:65%;color:rgba(147, 147, 147, 0.5);}
 .home .inverted .partners .twtr-widget{width:314px !important;}
 .home .inverted .partners .twtr-hd{padding:0 0 6px 0;}
 .home .inverted .partners .twtr-tweet-wrap{padding-left:0;padding-right:50px;}
