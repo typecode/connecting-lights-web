@@ -94,7 +94,6 @@
 
 				if (!internal.pixels) {
 					internal.pixels = internal.context.getImageData(0, 0, internal.width, internal.height);
-					console.log(internal.pixels);
 				}
 
 				data = internal.pixels.data;
