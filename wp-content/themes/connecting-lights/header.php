@@ -205,7 +205,7 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 						<span class="day">1</span>
 					</div>
 				</div>
-				<div class="dusk-til-witchinghour">
+				<div class="hours">
 					<span class="light">&#124;</span> dusk until midnight <span class="light">&#124;</span>
 				</div>
 			</div>
