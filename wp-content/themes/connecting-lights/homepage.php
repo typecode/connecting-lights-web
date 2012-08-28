@@ -124,7 +124,7 @@ get_header();
 				</ul>
 
 				<div class="twit-widget">
-					<h2 class="lighter twitter">Twitter</h2>
+					<h2 class="lighter twitter">Twitter <span class="small">@connectinglight</span></h2>
 					<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 					<script>
 						new TWTR.Widget({

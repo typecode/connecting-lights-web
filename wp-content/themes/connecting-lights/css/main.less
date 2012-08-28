@@ -47,7 +47,7 @@ h2 {
 	font-size: 36px;
 	line-height: 1em;
 	&.lighter {
-		color: @gray1;
+		color: @gray2;
 	}
 }
 h3 {
@@ -804,13 +804,14 @@ textarea {
 			.dagny;
 			display: block;
 			width: 100%;
-			font-size: 14px;
+			font-size: 13px;
 			padding-top: 5px;
+			margin-left: 2px;
 			font-weight: 500;
-			color: fadeOut(@copy-color, 25);
+			color: fadeOut(@copy-color, 10);
 
 			.light {
-				color: fadeOut(@copy-color, 75);
+				color: fadeOut(@copy-color, 60);
 			}
 		}
 
@@ -1079,8 +1080,13 @@ textarea {
 
 		h2.twitter {
 			margin-top: 90px;
-			margin-bottom: 30px;
+			margin-bottom: 18px;
 			margin-left: -3px;
+
+			.small {
+				font-size: 65%;
+				color: fadeOut(@gray2, 50);
+			}
 		}
 
 		.twtr-widget {
