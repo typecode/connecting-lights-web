@@ -33,7 +33,7 @@
 			color_picker_src: "",
 			bg_desaturation: 0.6,
 			prompts: ($.isArray(page.classes.prompts) ? page.classes.prompts : []),
-			service_dir: ""
+			service_url: ""
 		}, options);
 
 		internal = {
@@ -140,7 +140,7 @@
 			},
 			extensions: {
 				data: new NI.MerlinData({
-					uri: o.service_dir + "add.php",
+					uri: o.service_url,
 					data: {
 						m: "",
 						//q: null, //question ID
