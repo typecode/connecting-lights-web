@@ -21,6 +21,7 @@
 
 		o = $.extend({
 			app: null,
+			is_live_stream: false,
 			is_mobile: false,
 			$e: null,
 			selector: "",
@@ -154,12 +155,23 @@
 			extensions: {
 				data: new NI.MerlinData({
 					uri: o.service_url,
-					data: {
-						"message[message]": "",
-						"message[red]": null,
-						"message[green]": null,
-						"message[blue]": null
-					}
+					data: (function() {
+						var d = {
+							"message[message]": "",
+							"message[red]": null,
+							"message[green]": null,
+							"message[blue]": null
+						};
+						if (o.is_live_stream) {
+
+							// if we are in live stream mode,
+							// attach the geo coords pointing to Steel Rigg
+
+							d["message[latitude]"] = "55.002991";
+							d["message[longitude]"] = "-2.390963";
+						}
+						return d;
+					}())
 				})
 			},
 			first_step: "info",
