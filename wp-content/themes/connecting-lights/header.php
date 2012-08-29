@@ -131,6 +131,22 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 
 <body <?php body_class(); ?>>
 
+	<?php if (CL_IS_LIVE) : ?>
+
+		<script>
+			page.features.push(function(app) {
+				app.runtime.liveStream = new page.classes.LiveStream({
+					$trigger: $("#watch-live-stream"),
+					popup_url: "<?php bloginfo("template_url"); ?>/live-stream.php"
+				});
+			});
+		</script>
+		<div id="watch-live-stream" class="alert-bar">
+			<a href="">Watch the webstream Live</a>
+		</div>
+
+	<?php endif; ?>
+
 	<div id="wrap">
 		<div id="main">
 
