@@ -34,7 +34,7 @@
 			color_picker_src: "",
 			bg_desaturation: 0.6,
 			prompts: ($.isArray(page.classes.prompts) ? page.classes.prompts : []),
-			service_url: "/hwBackend/api/add.php"
+			service_url: ""
 		}, options);
 
 		internal = {
@@ -94,7 +94,7 @@
 			},
 			set_prompt: function() {
 				var prompt = internal.prompts[internal.prompts_index];
-				internal.merlin.internal.steps["compose"].fields["m"].component.set_val(prompt);
+				internal.merlin.internal.steps["compose"].fields["message[message]"].component.set_val(prompt);
 			},
 			get_bg_css: function(r, g, b) {
 				var hsv;
@@ -135,9 +135,9 @@
 				g = d.g;
 				b = d.b;
 
-				merlin.set_val("r", r);
-				merlin.set_val("g", g);
-				merlin.set_val("b", b);
+				merlin.set_val("message[red]", r);
+				merlin.set_val("message[green]", g);
+				merlin.set_val("message[blue]", b);
 
 				e.data.container.css({
 					"background-color": fn.get_bg_css(r, g, b)
@@ -157,18 +157,18 @@
 					uri: o.service_url,
 					data: (function() {
 						var d = {
-							"m": "",
-							"r": null,
-							"g": null,
-							"b": null
+							"message[message]": "",
+							"message[red]": null,
+							"message[green]": null,
+							"message[blue]": null
 						};
 						if (o.is_live_stream) {
 
 							// if we are in live stream mode,
 							// attach the geo coords pointing to Steel Rigg
 
-							//d["message[latitude]"] = "55.002991";
-							//d["message[longitude]"] = "-2.390963";
+							d["message[latitude]"] = "55.002991";
+							d["message[longitude]"] = "-2.390963";
 						}
 						return d;
 					}())
@@ -185,7 +185,7 @@
 					// next: internal.is_mobile ? "geo" : "dispatch",
 					next: "dispatch",
 					fields: {
-						"m": {
+						"message[message]": {
 							selector: "textarea[name=m]",
 							options: {
 								extensions: {
