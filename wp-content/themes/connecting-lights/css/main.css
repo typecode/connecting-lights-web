@@ -1271,6 +1271,21 @@ article .content {
 .alert-bar a:hover {
   background-color: #eeeeee;
 }
+.live-stream {
+  padding: 18px;
+}
+.live-stream iframe {
+  display: block;
+  margin: auto;
+}
+.live-stream .actions {
+  border-top: 0;
+  margin-top: 0;
+}
+.live-stream .actions a {
+  display: block;
+  margin: auto;
+}
 /*  Footer
 =============================================================================== */
 footer {

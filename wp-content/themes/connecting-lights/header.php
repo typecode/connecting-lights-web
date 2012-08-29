@@ -1,6 +1,7 @@
 <?php
 
 define("CL_IS_LIVE", (get_option('cl_is_live') == '1') ? 1 : 0);
+define("CL_IS_STREAM_PAGE", is_page("Live Stream") ? 1 : 0);
 
 global $post;
 
@@ -105,7 +106,7 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 	<script>
 		page.features.push(function(app) {
 			
-			<?php if (! CL_MOBILE ) { ?>	
+			<?php if ( !CL_MOBILE && !CL_IS_STREAM_PAGE ) { ?>	
   			$('.popup').click(function(event) {
   			  var width  = 575,
   			      height = 400,
@@ -131,150 +132,158 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 
 <body <?php body_class(); ?>>
 
-	<?php if (CL_IS_LIVE) : ?>
+	<?php if (CL_IS_LIVE && !CL_IS_STREAM_PAGE) : 
+
+		$stream_id = get_page_by_title("Live Stream")->ID;
+
+		if ($stream_id) {
+			$popup_url = get_permalink($stream_id);
+	?>
 
 		<script>
 			page.features.push(function(app) {
 				app.runtime.liveStream = new page.classes.LiveStream({
-					$trigger: $("#watch-live-stream"),
-					popup_url: "<?php bloginfo("template_url"); ?>/live-stream.php"
+					$trigger: $(".watch-live-trigger"),
+					popup_url: "<?php echo $popup_url ?>"
 				});
 			});
 		</script>
-		<div id="watch-live-stream" class="alert-bar">
-			<a href="">Watch the webstream Live</a>
+		<div class="alert-bar">
+			<a href="#" class="watch-live-trigger">Watch the webstream Live</a>
 		</div>
 
-	<?php endif; ?>
+	<?php } endif; ?>
 
 	<div id="wrap">
 		<div id="main">
 
-		<header>
-	
-			<h1><a href="<?php bloginfo("url"); ?>"><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></a></h1>
-			
-			<nav>
-				<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
-			</nav>
-			
-			<?php if ( CL_MOBILE ) { 
-			
-				function mobile_title() {
-					$title = get_the_title();
-					
-					if ($title == 'Mobile') {
-						$title = 'Participate';
-					}
-					
-					return $title;
-					
-				}
-			
-				$mobile_pages_args = array(
-					'numberposts' => -1,
-					'post_status' => 'publish'
-				); 
-			
-				$mobile_pages = get_pages( $mobile_pages_args );
-			
-			?>
-			<div class="mobile-nav small-button">
-				<div class="small-toggle"></div>
-				<span><?php echo mobile_title(); ?></span>
-			</div>
-			<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'>
-				<option value=""><?php echo mobile_title(); ?></option>
-				<?php 
-
-				    $menu_name = 'mobile_nav';
-
-				    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
-
-						$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-
-						$menu_items = wp_get_nav_menu_items($menu->term_id);
-
-						foreach ( (array) $menu_items as $key => $menu_item ) {
-							$title = $menu_item->title;
-						    $url = $menu_item->url;
-						    $id = $menu_item->object_id;
-
-						    if ($id != $current_id) {
-
-								if ($title == 'Mobile') {
-									$title = 'Participate';
-								}
-							    
-							    $menu_list .= '<option value="'. $url .'">'. $title .'</option>';
-
-							}
-						}
-
-						echo $menu_list;
-
-				    }
-
-				?>
-			</select>
-			<?php } ?>
-			
-			<div class="schedule">
-				<div class="clearfix">
-					<div class="date">
-						<span class="month">Aug</span>
-						<span class="day">31</span>
-					</div>
-					<div class="sep">+</div>
-					<div class="date">
-						<span class="month">Sept</span>
-						<span class="day">1</span>
-					</div>
-				</div>
-				<div class="hours">
-					<span class="light">&#124;</span> dusk until midnight <span class="light">&#124;</span>
-				</div>
-			</div>
-			
-			<div class="connect">
-			
-				<?php
-					$share_url = urlencode("http://connectinglight.info"); 	
-					$share_image = urlencode("http://connectinglight.info/wp-content/uploads/2012/08/homePageIllustration-new.jpg");
-					$share_description = urlencode("Connecting Light - a seventy-three mile long digital art installation along Hadrian's Wall World Heritage Site."); 
-					
-				?>
-
-				<a 	title="Share on Facebook"
-					href="https://www.facebook.com/dialog/feed?
-	  					app_id=395149550542429&
-	  					link=<?php echo $share_url ?>&
-						picture=<?php echo $share_image ?>&
-	  					name=Connecting%20Light&
-	  					caption=&
-	  					description=<?php echo $share_description ?>&
-	  					redirect_uri=<?php echo $share_url ?>" 
-					class="ss-icon" target="_blank"><span>Facebook</span></a>
-					
-				<a 	title="Share on Twitter" 
-					class="popup ss-icon" 
-					href="http://twitter.com/share?text=<?php echo $share_description ?>"
-					data-site-name="twitter" target="_blank"><span>Twitter</span></a>
-
-				<a 	title="Share on Tumblr" 
-					href="http://www.tumblr.com/share/photo?
-						source=<?php echo $share_image ?>&
-						caption=<?php echo $share_description ?>&
-						click_thru=<?php echo $share_url ?>"
-					class="ss-icon" target="_blank"><span>Tumblr</span></a>
+		<?php if (!CL_IS_STREAM_PAGE) : ?>
+			<header>
+		
+				<h1><a href="<?php bloginfo("url"); ?>"><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></a></h1>
+				
+				<nav>
+					<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
+				</nav>
+				
+				<?php if ( CL_MOBILE ) { 
+				
+					function mobile_title() {
+						$title = get_the_title();
 						
-				<a	title="Share on Pinterest"
-					href="http://pinterest.com/pin/create/button/?
-						url=<?php echo $share_url ?>&
-						media=<?php echo $share_image ?>
-						&description=<?php echo $share_description ?>" 
-					class="ss-icon ss-social"><span>Pinterest</span></a>
-					
-			</div>
-	
-		</header><!-- end main header -->
+						if ($title == 'Mobile') {
+							$title = 'Participate';
+						}
+						
+						return $title;
+						
+					}
+				
+					$mobile_pages_args = array(
+						'numberposts' => -1,
+						'post_status' => 'publish'
+					); 
+				
+					$mobile_pages = get_pages( $mobile_pages_args );
+				
+				?>
+				<div class="mobile-nav small-button">
+					<div class="small-toggle"></div>
+					<span><?php echo mobile_title(); ?></span>
+				</div>
+				<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+					<option value=""><?php echo mobile_title(); ?></option>
+					<?php 
+
+					    $menu_name = 'mobile_nav';
+
+					    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+
+							$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+
+							$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+							foreach ( (array) $menu_items as $key => $menu_item ) {
+								$title = $menu_item->title;
+							    $url = $menu_item->url;
+							    $id = $menu_item->object_id;
+
+							    if ($id != $current_id) {
+
+									if ($title == 'Mobile') {
+										$title = 'Participate';
+									}
+								    
+								    $menu_list .= '<option value="'. $url .'">'. $title .'</option>';
+
+								}
+							}
+
+							echo $menu_list;
+
+					    }
+
+					?>
+				</select>
+				<?php } ?>
+				
+				<div class="schedule">
+					<div class="clearfix">
+						<div class="date">
+							<span class="month">Aug</span>
+							<span class="day">31</span>
+						</div>
+						<div class="sep">+</div>
+						<div class="date">
+							<span class="month">Sept</span>
+							<span class="day">1</span>
+						</div>
+					</div>
+					<div class="hours">
+						<span class="light">&#124;</span> dusk until midnight <span class="light">&#124;</span>
+					</div>
+				</div>
+				
+				<div class="connect">
+				
+					<?php
+						$share_url = urlencode("http://connectinglight.info"); 	
+						$share_image = urlencode("http://connectinglight.info/wp-content/uploads/2012/08/homePageIllustration-new.jpg");
+						$share_description = urlencode("Connecting Light - a seventy-three mile long digital art installation along Hadrian's Wall World Heritage Site."); 
+						
+					?>
+
+					<a 	title="Share on Facebook"
+						href="https://www.facebook.com/dialog/feed?
+		  					app_id=395149550542429&
+		  					link=<?php echo $share_url ?>&
+							picture=<?php echo $share_image ?>&
+		  					name=Connecting%20Light&
+		  					caption=&
+		  					description=<?php echo $share_description ?>&
+		  					redirect_uri=<?php echo $share_url ?>" 
+						class="ss-icon" target="_blank"><span>Facebook</span></a>
+						
+					<a 	title="Share on Twitter" 
+						class="popup ss-icon" 
+						href="http://twitter.com/share?text=<?php echo $share_description ?>"
+						data-site-name="twitter" target="_blank"><span>Twitter</span></a>
+
+					<a 	title="Share on Tumblr" 
+						href="http://www.tumblr.com/share/photo?
+							source=<?php echo $share_image ?>&
+							caption=<?php echo $share_description ?>&
+							click_thru=<?php echo $share_url ?>"
+						class="ss-icon" target="_blank"><span>Tumblr</span></a>
+							
+					<a	title="Share on Pinterest"
+						href="http://pinterest.com/pin/create/button/?
+							url=<?php echo $share_url ?>&
+							media=<?php echo $share_image ?>
+							&description=<?php echo $share_description ?>" 
+						class="ss-icon ss-social"><span>Pinterest</span></a>
+						
+				</div>
+		
+			</header><!-- end main header -->
+		<?php endif; ?>

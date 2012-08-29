@@ -7,12 +7,13 @@
 		o = $.extend({
 			$trigger: null,
 			popup_url: null,
-			popup_specs: "width=640, height=360"
+			popup_specs: "width=800, height=600"
 		}, options);
 
 		internal = {
 			name: "mod.LiveStream",
 			$trigger: o.$trigger,
+			popup_url: o.popup_url,
 			popup: null
 		};
 
@@ -21,7 +22,7 @@
 				internal.$trigger.click(handlers.trigger_click);
 			},
 			open: function() {
-				internal.popup = window.open(o.popup_url, "_blank", o.popup_specs);
+				internal.popup = window.open(internal.popup_url, "_blank", o.popup_specs);
 			}
 		};
 

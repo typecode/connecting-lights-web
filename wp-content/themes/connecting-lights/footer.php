@@ -2,6 +2,7 @@
 		</div>
 	</div>
 
+	<?php if (!CL_IS_STREAM_PAGE) : ?>
 	<footer>	
 		<?php if (! CL_MOBILE ) { ?>
 		<div>
@@ -94,6 +95,7 @@
 		
 		<?php } ?>		
 	</footer>
+	<?php endif; ?>
 
 	<?php wp_footer(); ?>
 
@@ -120,13 +122,13 @@
 	<script src="<?php bloginfo("template_url"); ?>/js/Carousel.js"></script>
 	<!--<script src="<?php bloginfo("template_url"); ?>/js/jquery.easing.1.3.js"></script>-->
 
-	<?php if (CL_IS_LIVE) : ?>
+	<?php if (CL_IS_LIVE && !CL_IS_STREAM_PAGE) : ?>
 		<script src="<?php bloginfo("template_url"); ?>/js/LiveStream.js"></script>
 	<?php endif; ?>
 
 	<!-- initialization -->
 	<script>
-		this.console = NI.app.getConsole();
+		this.console = NI.app.getConsole(true);
 		
 		jQuery(function() {
 			var app = new NI.App({

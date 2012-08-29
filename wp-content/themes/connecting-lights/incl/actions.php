@@ -3,6 +3,7 @@
 		app.runtime.sendMessage = new page.classes.SendMessage({
 			app: app,
 			is_live_stream: <?php if (CL_IS_LIVE) { echo "true"; } else { echo "false"; } ?>,
+			is_live_stream_page: <?php if (CL_IS_STREAM_PAGE) { echo "true"; } else { echo "false"; } ?>,
 			is_mobile: <?php if (CL_MOBILE) { echo "true"; } else { echo "false"; } ?>,
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
@@ -100,33 +101,44 @@
 
 <?php if (! CL_MOBILE ) { ?>
 <div class="actions">
+	<?php if (CL_IS_LIVE && !CL_IS_STREAM_PAGE) : ?>
+	<a href="#" class="watch-live-trigger">
+		<img src="<?php bloginfo("template_url"); ?>/img/biglink_1.png" alt="Watch Live" />
+		<div>
+			<small>watch</small> live
+		</div>
+	</a>
+	<?php else : ?>
 	<a href="#" id="send-message-trigger">
 		<img src="<?php bloginfo("template_url"); ?>/img/biglink_1.png" alt="Send a Message" />
 		<div>
 			<small>send a</small> message
 		</div>
 	</a>
+	<?php endif; ?>
 
-	<?php
-		$visit_page = get_page_by_title("Visit");
-		$visit_url;
-		if ($visit_page) {
-			$visit_url = get_permalink($visit_page->ID);
-		} else {
-			$visit_url = "#";
-		}
-	?>
-	<a href="<?php echo $visit_url; ?>">
-		<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" alt="Purchase Tickets" />
-		<div>
-			<small>help</small> volunteer
-		</div>
-	</a>
-	<a href="<?php echo $visit_url; ?>">
-		<img src="<?php bloginfo("template_url"); ?>/img/biglink_3.png" alt="Find Locations" />
-		<div>
-			<small>find</small> locations
-		</div>
-	</a>
+	<?php if (!CL_IS_STREAM_PAGE) : ?>
+		<?php
+			$visit_page = get_page_by_title("Visit");
+			$visit_url;
+			if ($visit_page) {
+				$visit_url = get_permalink($visit_page->ID);
+			} else {
+				$visit_url = "#";
+			}
+		?>
+		<a href="<?php echo $visit_url; ?>">
+			<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" alt="Purchase Tickets" />
+			<div>
+				<small>help</small> volunteer
+			</div>
+		</a>
+		<a href="<?php echo $visit_url; ?>">
+			<img src="<?php bloginfo("template_url"); ?>/img/biglink_3.png" alt="Find Locations" />
+			<div>
+				<small>find</small> locations
+			</div>
+		</a>
+	<?php endif; ?>
 </div>
 <?php } ?>
