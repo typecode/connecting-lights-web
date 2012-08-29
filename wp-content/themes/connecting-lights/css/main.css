@@ -1289,7 +1289,7 @@ article .content {
   display: block;
   padding: 10px;
   text-align: center;
-  background-color: #8accb1;
+  background-color: #f2e2a3;
   color: #000000;
   -webkit-transition: background 250ms ease-in-out;
   -moz-transition: background 250ms ease-in-out;
@@ -1297,7 +1297,7 @@ article .content {
   transition: background 250ms ease-in-out;
 }
 .alert-bar a:hover {
-  background-color: #eeeeee;
+  background-color: #8accb1;
   text-decoration: none;
 }
 .live-stream {
