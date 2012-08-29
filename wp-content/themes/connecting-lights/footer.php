@@ -120,6 +120,10 @@
 	<script src="<?php bloginfo("template_url"); ?>/js/Carousel.js"></script>
 	<!--<script src="<?php bloginfo("template_url"); ?>/js/jquery.easing.1.3.js"></script>-->
 
+	<?php if (CL_IS_LIVE) : ?>
+		<script src="<?php bloginfo("template_url"); ?>/js/LiveStream.js"></script>
+	<?php endif; ?>
+
 	<!-- initialization -->
 	<script>
 		this.console = NI.app.getConsole();
