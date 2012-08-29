@@ -68,16 +68,8 @@ get_header();
 			</a>
 	
 		</div><!-- end overview -->
-		
-		<?php
-			if (CL_IS_LIVE) {
-
-				// TODO
-
-			} else {
-				require_once(TEMPLATEPATH . "/incl/carousel.php");
-			}
-		?>
+				
+		<?php require_once(TEMPLATEPATH . "/incl/carousel.php"); ?>
 		
 		<?php require_once(TEMPLATEPATH . "/incl/actions.php"); ?>
 		

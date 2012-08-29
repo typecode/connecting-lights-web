@@ -193,7 +193,7 @@
 										validators: ["required", "maxlen=100"]
 									},
 									Counter: {
-										max: 100
+										max: 140
 									}
 								},
 								handlers: {
