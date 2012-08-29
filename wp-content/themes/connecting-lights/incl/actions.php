@@ -57,11 +57,13 @@
 		<?php } else { ?>
 
 			<div class="tier">
-				<div class="color-picker">
-					<div class="handle"></div>
-					<canvas></canvas>
+				<div class="centered-controls">
+					<div class="color-picker">
+						<div class="handle"></div>
+						<canvas></canvas>
+					</div>
+					<a class="ca-button ca-trans next"><span>Send Your Message</span></a>
 				</div>
-				<a class="ca-button ca-trans next"><span>Send Your Message</span></a>
 			</div>
 
 		<?php } ?>

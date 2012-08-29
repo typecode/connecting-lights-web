@@ -359,7 +359,7 @@ nav > ul > li {
   display: none;
 }
 .overlay .pane {
-  padding: 20px 20px 40px;
+  padding: 20px 40px 40px;
   width: 580px;
   background-color: #333333;
   box-shadow: 0 2px 54px rgba(0, 0, 0, 0.75);
@@ -391,7 +391,7 @@ nav > ul > li {
   padding: 0;
 }
 .overlay.merlin-overlay .pane > .bd > .merlin > .step {
-  padding: 20px 20px 40px;
+  padding: 20px 40px 40px;
 }
 .overlay.merlin-overlay .spinner {
   text-align: center;
@@ -1234,6 +1234,9 @@ article .content {
   background-color: rgba(255, 255, 255, 0.3);
   border: 0;
   border-radius: 5px;
+  font-size: 24px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
 }
 .send-message .send-message-compose .tc-field .count {
   display: block;
@@ -1248,6 +1251,26 @@ article .content {
   text-align: center;
   margin: 40px auto 0;
 }
+.send-message .send-message-compose .centered-controls {
+  margin-top: 40px;
+  text-align: center;
+}
+.send-message .send-message-compose .centered-controls:before {
+  content: '';
+  display: table;
+}
+.send-message .send-message-compose .centered-controls:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.send-message .send-message-compose .centered-controls .color-picker,
+.send-message .send-message-compose .centered-controls .ca-button {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 20px;
+}
 .send-message .send-message-geo {
   position: relative;
 }
@@ -1260,16 +1283,22 @@ article .content {
 .send-message .thank-you p {
   text-align: center;
 }
-/*  Stuff for live stream
+/*  Alert bar and live stream
 =============================================================================== */
 .alert-bar a {
   display: block;
   padding: 10px;
-  background-color: #ffffff;
+  text-align: center;
+  background-color: #8accb1;
   color: #000000;
+  -webkit-transition: background 250ms ease-in-out;
+  -moz-transition: background 250ms ease-in-out;
+  -o-transition: background 250ms ease-in-out;
+  transition: background 250ms ease-in-out;
 }
 .alert-bar a:hover {
   background-color: #eeeeee;
+  text-decoration: none;
 }
 .live-stream {
   padding: 18px;

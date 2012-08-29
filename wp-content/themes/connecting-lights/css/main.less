@@ -428,7 +428,7 @@ nav {
 	}
  
 	.pane {
-		padding: 20px 20px 40px;
+		padding: 20px 40px 40px;
 		width: 580px;
 		background-color: #333333;
 		box-shadow: 0 2px 54px rgba(0, 0, 0, .75);
@@ -466,7 +466,7 @@ nav {
 			padding: 0;
 
 			> .bd > .merlin > .step {
-				padding: 20px 20px 40px;
+				padding: 20px 40px 40px;
 			}
 		}
 
@@ -1360,6 +1360,9 @@ article {
 				background-color: rgba(255, 255, 255, 0.3);
 				border: 0;
 				border-radius: 5px;
+				font-size: 24px;
+				line-height: 1.5;
+				color: rgba(0, 0, 0, .7);
 			}
 
 			.count {
@@ -1376,6 +1379,20 @@ article {
 			width: 180px;
 			text-align: center;
 			margin: 40px auto 0;
+		}
+
+		.centered-controls {
+			.clear;
+			margin-top: 40px;
+			text-align: center;
+
+			.color-picker,
+			.ca-button {
+				float: none;
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0 20px;
+			}
 		}
 	}
 
@@ -1400,18 +1417,25 @@ article {
 
 
 
-/*  Stuff for live stream
+/*  Alert bar and live stream
 =============================================================================== */
 
 .alert-bar {
 	a {
 		display: block;
 		padding: 10px;
-		background-color: #ffffff;
+		text-align: center;
+		background-color: @accent;
 		color: #000000;
+
+		-webkit-transition: background 250ms ease-in-out; 
+		-moz-transition: background 250ms ease-in-out;
+		-o-transition: background 250ms ease-in-out;
+		transition: background 250ms ease-in-out;
 
 		&:hover {
 			background-color: #eeeeee;
+			text-decoration: none;
 		}
 	}
 }
