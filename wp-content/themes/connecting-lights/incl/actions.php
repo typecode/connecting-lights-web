@@ -3,7 +3,7 @@
 		app.runtime.sendMessage = new page.classes.SendMessage({
 			app: app,
 			is_live_stream: <?php if (CL_IS_LIVE) { echo "true"; } else { echo "false"; } ?>,
-			is_live_stream_page: <?php if (CL_IS_STREAM_PAGE) { echo "true"; } else { echo "false"; } ?>,
+			is_live_stream_page: <?php if (CL_IS_LIVE_STREAM_PAGE) { echo "true"; } else { echo "false"; } ?>,
 			is_mobile: <?php if (CL_MOBILE) { echo "true"; } else { echo "false"; } ?>,
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
@@ -101,7 +101,7 @@
 
 <?php if (! CL_MOBILE ) { ?>
 <div class="actions">
-	<?php if (CL_IS_LIVE && !CL_IS_STREAM_PAGE) : ?>
+	<?php if (CL_IS_LIVE && !CL_IS_LIVE_STREAM_PAGE) : ?>
 	<a href="#" class="watch-live-trigger">
 		<img src="<?php bloginfo("template_url"); ?>/img/biglink_1.png" alt="Watch Live" />
 		<div>
@@ -117,7 +117,7 @@
 	</a>
 	<?php endif; ?>
 
-	<?php if (!CL_IS_STREAM_PAGE) : ?>
+	<?php if (!CL_IS_LIVE_STREAM_PAGE) : ?>
 		<?php
 			$visit_page = get_page_by_title("Visit");
 			$visit_url;

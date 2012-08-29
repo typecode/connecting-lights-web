@@ -2,7 +2,7 @@
 		</div>
 	</div>
 
-	<?php if (!CL_IS_STREAM_PAGE) : ?>
+	<?php if (!CL_IS_LIVE_STREAM_PAGE) : ?>
 	<footer>	
 		<?php if (! CL_MOBILE ) { ?>
 		<div>
@@ -122,7 +122,7 @@
 	<script src="<?php bloginfo("template_url"); ?>/js/Carousel.js"></script>
 	<!--<script src="<?php bloginfo("template_url"); ?>/js/jquery.easing.1.3.js"></script>-->
 
-	<?php if (CL_IS_LIVE && !CL_IS_STREAM_PAGE) : ?>
+	<?php if (CL_IS_LIVE && !CL_IS_LIVE_STREAM_PAGE) : ?>
 		<script src="<?php bloginfo("template_url"); ?>/js/LiveStream.js"></script>
 	<?php endif; ?>
 

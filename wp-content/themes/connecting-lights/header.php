@@ -1,7 +1,7 @@
 <?php
 
 define("CL_IS_LIVE", (get_option('cl_is_live') == '1') ? 1 : 0);
-define("CL_IS_STREAM_PAGE", is_page("Live Stream") ? 1 : 0);
+define("CL_IS_LIVE_STREAM_PAGE", is_page("Live Stream") ? 1 : 0);
 
 global $post;
 
@@ -106,7 +106,7 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 	<script>
 		page.features.push(function(app) {
 			
-			<?php if ( !CL_MOBILE && !CL_IS_STREAM_PAGE ) { ?>	
+			<?php if ( !CL_MOBILE && !CL_IS_LIVE_STREAM_PAGE ) { ?>	
   			$('.popup').click(function(event) {
   			  var width  = 575,
   			      height = 400,
@@ -132,7 +132,7 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 
 <body <?php body_class(); ?>>
 
-	<?php if (CL_IS_LIVE && !CL_IS_STREAM_PAGE) : 
+	<?php if (CL_IS_LIVE && !CL_IS_LIVE_STREAM_PAGE) : 
 
 		$stream_id = get_page_by_title("Live Stream")->ID;
 
@@ -157,7 +157,7 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 	<div id="wrap">
 		<div id="main">
 
-		<?php if (!CL_IS_STREAM_PAGE) : ?>
+		<?php if (!CL_IS_LIVE_STREAM_PAGE) : ?>
 			<header>
 		
 				<h1><a href="<?php bloginfo("url"); ?>"><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></a></h1>
