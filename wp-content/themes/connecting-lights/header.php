@@ -149,7 +149,7 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 			});
 		</script>
 		<div class="alert-bar">
-			<a href="#" class="watch-live-trigger">Watch the webstream Live</a>
+			<a href="#" class="watch-live-trigger">Watch the webstream live</a>
 		</div>
 
 	<?php } endif; ?>
