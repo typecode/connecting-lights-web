@@ -1083,9 +1083,14 @@ textarea {
 			margin-bottom: 18px;
 			margin-left: -3px;
 
-			.small {
+			a.small {
 				font-size: 65%;
 				color: fadeOut(@gray2, 50);
+				text-decoration: none;
+
+				&:hover {
+					color: @accent;
+				}
 			}
 		}
 
@@ -1095,19 +1100,25 @@ textarea {
 		}
 
 		.twtr-hd { 
-			padding: 0 0 6px 0; 
+			padding: 0 0 6px 18px; 
+			display: none;
 		}
 
 		.twtr-tweet-wrap {
-			padding-left: 0;
+			margin-bottom: 18px;
+			padding-left: 18px;
 			padding-right: 50px;
+			padding-bottom: 0;
+			padding-top: 12px;
+			border-top: 1px solid #eee;
+			border-left: 1px solid #eee;
 		}
 
 		.twtr-widget .twtr-tweet {
-			border-bottom: 1px solid #eee;
+			border: none;
 
 			&:last-child {
-				border-bottom: none;
+				border-top: none;
 			}
 		}
 
