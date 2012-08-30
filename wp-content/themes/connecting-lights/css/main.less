@@ -804,7 +804,7 @@ textarea {
 			.dagny;
 			display: block;
 			width: 100%;
-			font-size: 13px;
+			font-size: 14px;
 			padding-top: 5px;
 			margin-left: 2px;
 			font-weight: 500;
@@ -812,6 +812,12 @@ textarea {
 
 			.light {
 				color: fadeOut(@copy-color, 60);
+			}
+
+			.meridiem {
+				//color: fadeOut(@copy-color, 40);
+				font-size: 13px;
+				margin-left: 1px;
 			}
 		}
 
@@ -1083,9 +1089,14 @@ textarea {
 			margin-bottom: 18px;
 			margin-left: -3px;
 
-			.small {
+			a.small {
 				font-size: 65%;
 				color: fadeOut(@gray2, 50);
+				text-decoration: none;
+
+				&:hover {
+					color: @accent;
+				}
 			}
 		}
 
@@ -1095,19 +1106,25 @@ textarea {
 		}
 
 		.twtr-hd { 
-			padding: 0 0 6px 0; 
+			padding: 0 0 6px 18px; 
+			display: none;
 		}
 
 		.twtr-tweet-wrap {
-			padding-left: 0;
+			margin-bottom: 18px;
+			padding-left: 18px;
 			padding-right: 50px;
+			padding-bottom: 0;
+			padding-top: 12px;
+			border-top: 1px solid #eee;
+			border-left: 1px solid #eee;
 		}
 
 		.twtr-widget .twtr-tweet {
-			border-bottom: 1px solid #eee;
+			border: none;
 
 			&:last-child {
-				border-bottom: none;
+				border-top: none;
 			}
 		}
 
@@ -1428,6 +1445,7 @@ article {
 		line-height: 1;
 		text-align: center;
 		background-color: #f2e2a3;
+		color: #000000;
 		color: rgba(0, 0, 0, 0.65);
 		box-shadow: 0 0 24px rgba(0,0,0,0.5);
 

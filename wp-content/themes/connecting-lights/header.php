@@ -132,19 +132,19 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 
 <body <?php body_class(); ?>>
 
-	<?php if (CL_IS_LIVE && !CL_IS_LIVE_STREAM_PAGE) : 
+	<?php if (CL_IS_LIVE && !CL_IS_LIVE_STREAM_PAGE && !CL_MOBILE) : 
 
 		$stream_id = get_page_by_title("Live Stream")->ID;
 
 		if ($stream_id) {
-			$popup_url = get_permalink($stream_id);
+			$stream_page_url = get_permalink($stream_id);
 	?>
 
 		<script>
 			page.features.push(function(app) {
 				app.runtime.liveStream = new page.classes.LiveStream({
 					$trigger: $(".watch-live-trigger"),
-					popup_url: "<?php echo $popup_url ?>"
+					page_url: "<?php echo $stream_page_url; ?>"
 				});
 			});
 		</script>
@@ -240,7 +240,7 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 						</div>
 					</div>
 					<div class="hours">
-						<span class="light">&#124;</span> dusk until midnight <span class="light">&#124;</span>
+						<span class="light">&#124;</span> 8<span class="meridiem">pm</span>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;11<span class="meridiem">pm</span> <span class="light">&#124;</span>
 					</div>
 				</div>
 				
