@@ -240,7 +240,7 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 						</div>
 					</div>
 					<div class="hours">
-						<span class="light">&#124;</span> dusk until midnight <span class="light">&#124;</span>
+						<span class="light">&#124;</span> 8<span class="meridiem">pm</span>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;11<span class="meridiem">pm</span> <span class="light">&#124;</span>
 					</div>
 				</div>
 				
