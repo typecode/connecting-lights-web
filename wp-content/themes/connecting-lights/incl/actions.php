@@ -103,7 +103,7 @@
 
 <?php if (! CL_MOBILE ) { ?>
 <div class="actions">
-	<?php if (CL_IS_LIVE && !CL_IS_LIVE_STREAM_PAGE) : ?>
+	<?php if (CL_IS_LIVE && !CL_IS_LIVE_STREAM_PAGE && !CL_MOBILE) : ?>
 	<a href="#" class="watch-live-trigger">
 		<img src="<?php bloginfo("template_url"); ?>/img/biglink_1.png" alt="Watch Live" />
 		<div>
