@@ -3,9 +3,10 @@
 
 <head>
 
-	<title>Homepage &laquo; Connecting Light Connecting Light</title>
+	<title>Visit &laquo; Connecting Light Connecting Light</title>
 
 	<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
 	<link rel="icon" type="image/x-icon" href="http://connectinglight.info/wp-content/themes/connecting-lights/img/favicon.ico" />
 	<link rel="shortcut icon" type="image/x-icon" href="http://connectinglight.info/wp-content/themes/connecting-lights/img/favicon.ico" />
@@ -30,20 +31,20 @@
 
 	
 <!-- This site is optimized with the Yoast WordPress SEO plugin v1.2.7 - http://yoast.com/wordpress/seo/ -->
-<link rel="canonical" href="http://connectinglight.info/" />
+<link rel="canonical" href="http://connectinglight.info/visiting/" />
 <meta property='og:locale' content='en_us'/>
-<meta property='og:title' content='Homepage - Connecting Light'/>
-<meta property='og:url' content='http://connectinglight.info/'/>
+<meta property='og:title' content='Visit - Connecting Light'/>
+<meta property='og:url' content='http://connectinglight.info/visiting/'/>
 <meta property='og:site_name' content='Connecting Light'/>
 <meta property='og:type' content='article'/>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@connectinglight">
-<meta name="twitter:title" content="Homepage - Connecting Light">
+<meta name="twitter:title" content="Visit - Connecting Light">
 <meta name="twitter:description" content="">
-<meta name="twitter:url" content="http://connectinglight.info/">
+<meta name="twitter:url" content="http://connectinglight.info/visiting/">
 <!-- / Yoast WordPress SEO plugin. -->
 
-<link rel="alternate" type="application/rss+xml" title="Connecting Light &raquo; Homepage Comments Feed" href="http://connectinglight.info/homepage/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Connecting Light &raquo; Visit Comments Feed" href="http://connectinglight.info/visiting/feed/" />
 <link rel='stylesheet' id='NextGEN-css'  href='http://connectinglight.info/wp-content/plugins/nextgen-gallery/css/nggallery.css?ver=1.0.0' type='text/css' media='screen' />
 <link rel='stylesheet' id='jquery.lightbox.min.css-css'  href='http://connectinglight.info/wp-content/plugins/wp-jquery-lightbox/styles/lightbox.min.css?ver=1.3.4' type='text/css' media='all' />
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
@@ -123,30 +124,13 @@
 	<script>
 		page.features.push(function(app) {
 			
-				
-  			$('.popup').click(function(event) {
-  			  var width  = 575,
-  			      height = 400,
-  			      left   = ($(window).width()  - width)  / 2,
-  			      top    = ($(window).height() - height) / 2,
-  			      url    = this.href,
-  			      opts   = 'status=1' +
-  			               ',width='  + width  +
-  			               ',height=' + height +
-  			               ',top='    + top    +
-  			               ',left='   + left;
-  			  
-  			  window.open(url, $(this).data("site-name"), opts);
-  			
-  			  return false;
-  			});
-  				  		
+				  		
 	  	});
 	</script>
 
 </head>
 
-<body class="home page page-id-344 page-template page-template-homepage-php">
+<body class="page page-id-10 page-parent page-template-default mobile">
 
 	
 	<div id="wrap">
@@ -159,11 +143,18 @@
 				<nav>
 					<ul id="menu-menu" class="menu"><li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="http://connectinglight.info/about/">About</a></li>
 <li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://connectinglight.info/participate/">Participate</a></li>
-<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://connectinglight.info/visiting/">Visit</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10 current_page_item menu-item-63"><a href="http://connectinglight.info/visiting/">Visit</a></li>
 <li id="menu-item-68" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a href="http://connectinglight.info/connector/">Connector</a></li>
 <li id="menu-item-378" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-378"><a href="http://connectinglight.info/devblog/">Blog</a></li>
 </ul>				</nav>
 				
+								<div class="mobile-nav small-button">
+					<div class="small-toggle"></div>
+					<span>Visit</span>
+				</div>
+				<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+					<option value="">Visit</option>
+									</select>
 								
 				<div class="schedule">
 					<div class="clearfix">
@@ -218,111 +209,75 @@
 		
 			</header><!-- end main header -->
 		
-	<div class="xFull">
-
-		<script>
-			page.features.push(function(app) {
-				var $e = $("#overview"),
-					$more = $e.find(".more"),
-					$toggle = $e.find(".toggle"),
-					$expand = $toggle.find(".expand"),
-					$collapse = $toggle.find(".collapse");
-
-				$toggle.click(function(e) {
-					e.preventDefault();
-					if ($more.is(":visible")) {
-						$more.slideUp(300);
-						$expand.show();
-						$collapse.hide();
-					} else {
-						$more.slideDown(300);
-						$expand.hide();
-						$collapse.show();
-					}
-				});
-			});
-		</script>
-		<div id="overview" class="overview">
-			
-			<div>
-	
-				<p><span class="lighter">Connecting Light is a digital art installation along Hadrian&rsquo;s Wall World Heritage Site.</span><br />
-				The installation consists of hundreds of large-scale, light-filled balloons transmitting colors from one-to-another, creating a communication network spanning over seventy miles.</p>
+	<div class="inverted">
+		<div class="inner">
 		
-				<div class="more">
-					<p>Audience members are invited to participate by sending personalized messages along the light-lined wall at a number of viewing locations or, this Web site and companion mobile app.</p>
-					<p>Connecting Light investigates borders, imagining them not as a line of division, but as a source of connection.</p>
-					<p>The installation is open to the public from Friday, August 31st to Saturday, September 1st.</p>
+			<header>
+				<h1>Visit</h1>
+			</header>
+			
+						
+				
+				<div class="detail-block">			
+					<h3>Viewing Locations and Directions</h3>
+					<div class="details">
+						<p><em>Connecting Light</em> is a public and free art installation consisting of several viewing locations along Britain’s greatest Roman monument: the Hadrian’s Wall World Heritage Site.</p>
+<p>Experience <em>Connecting Light</em> in-person: choose a viewing location below to get directions.</p>
+<p><iframe width="550" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=200654090801128537935.0004c785d1b89a1dfbc2d&amp;ie=UTF8&amp;t=h&amp;ll=54.968155,-2.460937&amp;spn=1.734356,3.02124&amp;z=8&amp;output=embed"></iframe><br /><small>View <a href="https://maps.google.com/maps/ms?msa=0&amp;msid=200654090801128537935.0004c785d1b89a1dfbc2d&amp;ie=UTF8&amp;t=h&amp;ll=54.968155,-2.460937&amp;spn=1.734356,3.02124&amp;z=8&amp;source=embed" style="color:#0000FF;text-align:left">connecting light</a> in a larger map</small></p>
+<h4>A note about viewing locations</h4>
+<p>Please be aware that <em>Connecting Light</em> visitors who travel outside of designated viewing areas do so at their own risk. As such, we urge visitors to behave responsibly and take care for the health and safety of themselves and those around them.</p>
+<p>Please do not park on roadside verges or trespass onto private land. Be aware for oncoming traffic when crossing roads, especially at night.</p>
+					</div>
+				</div>
+				
+				<div class="detail-block">			
+					<h3>Hadrian&#8217;s Wall Country</h3>
+					<div class="details">
+						<div id="ngg-slideshow-26-403-1" class="ngg-slideshow" style="height:275px;width:550px;">
+<div id="ngg-slideshow-26-403-1-loader" class="ngg-slideshow-loader" style="height:275px;width:550px;">
+<img src="http://connectinglight.info/wp-content/plugins/nextgen-gallery/images/loader.gif" alt="" />
+</div></div>
+
+<script type="text/javascript" defer="defer">
+jQuery(document).ready(function(){ 
+jQuery("#ngg-slideshow-26-403-1").nggSlideshow( {id: 26,fx:"fade",width:550,height:275,domain: "http://connectinglight.info/",timeout:5000});
+});
+</script>
+<h4>Explore</h4>
+<p>Hadrian’s Wall Country offers something for all ages, tastes and cultural desires. Enjoy stunning views and acres of unspoilt landscape amidst vibrant city centres and quaint market towns. Indulge in luxury accommodation and fine dining experiences, or explore cultural heritage sites and activities by <a href="http://www.hadrians-wall.org/page.aspx//Interactive-Map/Walk-the-Wall" title="Explore Hadrian's Wall by foot" target="_blank">foot</a> or <a href="http://www.hadrians-wall.org/page.aspx//Interactive-Map/Explore-by-Bike" title="Explore Hadrian's Wall by bike" target="_blank">bicycle</a>. <a href="http://www.hadrians-wall.org/explore.aspx" title="Explore Hadrian's Wall" target="_blank">Explore Hadrian’s Wall Country</a>.</p>
+<h4>Travel and accommodations</h4>
+<p>Hadrian’s Wall Country is well-connected—travel to-and-from can be made via two international airports, ferries connected to Newcastle’s Central Station, a three-and-a-half hour train ride from London, and the M6 and A1(M). <a href="http://www.hadrians-wall.org/page.aspx/Journey/Getting-Here" title="Getting to Hadrian's Wall Country" target="_blank">Learn more about traveling to Hadrian’s Wall Country</a>.</p>
+<p>Getting around Hadrian’s Wall Country is easy. The AD122 bus service runs from Newcastle Central Station to Carlisle with connecting services to Bowness-on-Solway. The Hadrian&#8217;s Wall Country Train Line runs for 55 miles from Newcastle to Carlisle via Hexham. Finally, all Roman forts and museums, and many sections of the Wall, are accessible by car; parking is available at all the major Roman sites. <a href="http://www.hadrians-wall.org/page.aspx/Journey/Getting-Around" title="Getting around Hadrian's Wall Country" target="_blank">Learn more about getting around Hadrian’s Wall Country</a>.</p>
+<p>There’s a wide range of accommodation available in Hadrian’s Wall Country suitable for all tastes and budgets. <a href="http://www.hadrians-wall.org/accommodation/" title="Search and book Hadrian's Wall accommodations" target="_blank">Search and book accommodations</a>.</p>
+					</div>
+				</div>
+				
+				<div class="detail-block">			
+					<h3>Hadrian’s Wall Trust and Conservation of a World Heritage Site</h3>
+					<div class="details">
+						<p>Hadrian’s Wall is recognized as a World Heritage Site by <a href="http://whc.unesco.org/" title="UNESCO Web site" target="_blank">The United Nations Educational, Scientific and Cultural Organization</a> (UNESCO). UNESCO’s vision for World Heritage Sites is to promote understanding, toleration, and co-operation amongst the peoples of the World through respect for their shared heritage.  The Hadrian’s Wall Trust leads and delivers projects to further explore issues of identity, exclusion, and respect in the modern world. More information can be found on the Trust’s <a href="http://www.hadrianswallheritage.co.uk/page.aspx/The-Hadrian%27s-Wall-Trust" title="The Hadrian's Wall Trust Web site">web site</a>.</p>
+<p>The Trust also protects the archeology and conserves the landscape surrounding the Wall. Each year Hadrian’s Wall Country caters to more than 3.5 million overnight visits. In addition, millions more see and touch the Wall and walk the surrounding landscape. As such, management of footpaths and National Trails along the Wall is very exact and very intense. Upkeep comes at a price: each mile of the National Trail costs £2,800 per year.</p>
+<p>If you would like to contribute towards the upkeep of the Wall, the National Trail, and the surrounding landscape, we welcome any and all donations:</p>
+<p>Text “Wall22” and your donation to 70070. (e.g. “Wall22 £10” to 70070.)</p>
+<p>Or, send cheques or Postal Orders to:</p>
+<p><span style="font-weight:600">Hadrian’s Wall Heritage Ltd</span><br />
+East Peterel Field, Dipton Mill Road, Hexham<br />
+Northumberland, NE 46 2JT</p>
+					</div>
 				</div>
 			
-			</div>
-
-			<a href="#" class="toggle">
-				<span class="expand"><span>Learn more</span> <span class="ss-standard ss-navigatedown"></span></span>
-				<span class="collapse"><span>Less</span> <span class="ss-standard ss-navigateup"></span></span>
-			</a>
-	
-		</div><!-- end overview -->
-				
 			
-		<script>
-				page.features.push(function(app) {
-					app.runtime.carousel_5040dc624966d = new page.classes.Carousel({
-						app: app,
-						selector: "#carousel_5040dc624966d"
-					});
-				});
-			</script>
-		<div id="carousel_5040dc624966d" class="carousel autoscroll">
-			<div class="viewport">
-				
-				<!-- <div class="border">
-				</div> -->
-
-				<div class="scroll">
-				<div class="slide"><img width="1500" height="650" src="http://connectinglight.info/wp-content/uploads/2012/08/homePageIllustration-new.jpg" class="attachment-full" alt="artistic rendering" title="homePageIllustration-new" /></div><div class="slide"><img width="972" height="421" src="http://connectinglight.info/wp-content/uploads/2012/08/splash.png" class="attachment-full" alt="Hadrian&#039;s Wall" title="splash" /></div><div class="slide"><img width="1500" height="650" src="http://connectinglight.info/wp-content/uploads/2012/08/IMG_7675.jpg" class="attachment-full" alt="IMG_7675" title="IMG_7675" /></div><div class="slide"><img width="1500" height="650" src="http://connectinglight.info/wp-content/uploads/2012/08/IMG_7683.jpg" class="attachment-full" alt="IMG_7683" title="IMG_7683" /></div><div class="slide"><img width="972" height="421" src="http://connectinglight.info/wp-content/uploads/2012/08/0809demo.jpg" class="attachment-full" alt="Demo on the streets" title="Demo on the streets" /></div><div class="slide"><img width="972" height="421" src="http://connectinglight.info/wp-content/uploads/2012/08/CL-lights.jpg" class="attachment-full" alt="Xbees controlled High power LEDs" title="Xbees controlled High power LEDs" /></div><div class="slide"><img width="972" height="421" src="http://connectinglight.info/wp-content/uploads/2012/08/covercl.jpg" class="attachment-full" alt="hand drawings" title="covercl" /></div><div class="slide"><img width="972" height="421" src="http://connectinglight.info/wp-content/uploads/2012/08/connectingLight_fieldtest_Yarm_b.jpg" class="attachment-full" alt="connectingLight_fieldtest_Yarm_b" title="connectingLight_fieldtest_Yarm_b" /></div><div class="slide"><img width="972" height="421" src="http://connectinglight.info/wp-content/uploads/2012/08/connectingLight_fieldtest_Yarm.jpg" class="attachment-full" alt="connectingLight_fieldtest_Yarm" title="connectingLight_fieldtest_Yarm" /></div><div class="slide"><img width="972" height="421" src="http://connectinglight.info/wp-content/uploads/2012/08/xbeerangefinder.jpg" class="attachment-full" alt="xbeerangefinder" title="xbeerangefinder" /></div>				</div>
-			</div>
-			<ul class="nav">
-			
-					<li><a href="#">1</a> <span class="caption"></span></li>
-			
-			
-					<li><a href="#">2</a> <span class="caption"></span></li>
-			
-			
-					<li><a href="#">3</a> <span class="caption"></span></li>
-			
-			
-					<li><a href="#">4</a> <span class="caption"></span></li>
-			
-			
-					<li><a href="#">5</a> <span class="caption"></span></li>
-			
-			
-					<li><a href="#">6</a> <span class="caption"></span></li>
-			
-			
-					<li><a href="#">7</a> <span class="caption"></span></li>
-			
-			
-					<li><a href="#">8</a> <span class="caption"></span></li>
-			
-			
-					<li><a href="#">9</a> <span class="caption"></span></li>
-			
-			
-					<li><a href="#">10</a> <span class="caption"></span></li>
-			
-						</ul>
 		</div>
-		
+	</div>
+
+	<div class="xFull">
 		<script>
 	page.features.push(function(app) {
 		app.runtime.sendMessage = new page.classes.SendMessage({
 			app: app,
 			is_live_stream: false,
 			is_live_stream_page: false,
-			is_mobile: false,
+			is_mobile: true,
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
 			color_picker_src: "http://connectinglight.info/wp-content/themes/connecting-lights/img/color-picker.png",
@@ -334,9 +289,6 @@
 <div id="send-message" class="send-message merlin" style="display: none;">
 	<div class="step send-message-info">
 		<h2>Your message will travel across Hadrian's Wall in the form of pulses of light.</h2>
-
-		
-		<p>Prior to the event, we're collecting messages which will pre-populate the messaging system and be some of the first ones to be seen by the public.</p>
 
 		
 		<p>We've come up with some sentences about connection we'd love for you to fill out, or feel free to make the message your own.</p>
@@ -358,17 +310,36 @@
 		</div>
 
 		
-			<div class="tier">
-				<div class="centered-controls">
+			<div class="tier control-bar">
+				<div class="inner">
+					<span class="small-button cancel"><span href="#">Cancel</span></span>
 					<div class="color-picker">
 						<div class="handle"></div>
 						<canvas></canvas>
 					</div>
-					<a class="ca-button ca-trans next"><span>Send Your Message</span></a>
+					<span class="small-button next"><span href="#">Next</span></span>
 				</div>
 			</div>
 
 			</div>
+			<div class="step send-message-geo">
+			<div class="map">
+				<!-- placeholder for map container -->
+			</div>
+
+			<div class="tip">
+				<div class="inner">
+					<p>You can specify where on Hadrian's Wall you would like your message to start. It will then travel as pulses of light along the wall, to one of the coasts.</p>
+				</div>
+			</div>
+
+			<div class="control-bar">
+				<div class="inner">
+					<a class="small-button prev"><span>Back</span></a>
+					<a class="small-button next"><span>Send</span></a>
+				</div>
+			</div>
+		</div>
 		<div class="step dispatch">
 		<div class="spinner">
 			<img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/spinner.gif" alt="Loading">
@@ -376,188 +347,51 @@
 	</div>
 	<div class="step thank-you">
 		<h2>Thank you!</h2>
-				<p>You may now close this window.</p>
 			</div>
 </div>
 
-<div class="actions">
-		<a href="#" id="send-message-trigger">
-		<img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/biglink_1.png" alt="Send a Message" />
-		<div>
-			<small>send a</small> message
-		</div>
-	</a>
-	
-					<a href="http://connectinglight.info/visiting/">
-			<img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/biglink_2.png" alt="Purchase Tickets" />
-			<div>
-				<small>help</small> volunteer
-			</div>
-		</a>
-		<a href="http://connectinglight.info/visiting/">
-			<img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/biglink_3.png" alt="Find Locations" />
-			<div>
-				<small>find</small> locations
-			</div>
-		</a>
 	</div>
-		
-	</div>
-	
-	<div class="inverted">
-		<div class="inner">
-
-			<div class="posts">
-				<h2>Latest Blog Posts</h2>
-				<ul>
-									<li class="post clearfix">
-						<a class="thumblink" href="http://connectinglight.info/vallum-farm-friday/"><img src="http://connectinglight.info/wp-content/gallery/cache/514_crop_164x164_img_8911.jpg" alt="img_8911" title="Vallum Farm Friday" class="wp-post-image ngg-image-514 " /></a>
-						<div>
-							<h3><a href="http://connectinglight.info/vallum-farm-friday/">Vallum Farm &#8211;  Friday</a></h3>
-													</div>
-					</li>
-									<li class="post clearfix">
-						<a class="thumblink" href="http://connectinglight.info/show-preparation-and-the-demo-on-the-wall/"><img src="http://connectinglight.info/wp-content/gallery/cache/507_crop_164x164_img_8908.jpg" alt="img_8908" title="0830 -  Demo on the wall" class="wp-post-image ngg-image-507 " /></a>
-						<div>
-							<h3><a href="http://connectinglight.info/show-preparation-and-the-demo-on-the-wall/">Show Preparation and the Demo on the wall</a></h3>
-													</div>
-					</li>
-									<li class="post clearfix">
-						<a class="thumblink" href="http://connectinglight.info/johnny-saved-the-day/"></a>
-						<div>
-							<h3><a href="http://connectinglight.info/johnny-saved-the-day/">Johnny saved the day.</a></h3>
-													</div>
-					</li>
-									<li class="post clearfix">
-						<a class="thumblink" href="http://connectinglight.info/vallum/"></a>
-						<div>
-							<h3><a href="http://connectinglight.info/vallum/">Vallum Farm &#8211; Thursday</a></h3>
-							<p>Connecting Light &#8211; message and SMS to lights &#8211; test from Molmol on Vimeo. Day 2, 80 Xbees hooked up to LEDs and 12V batteries, and controlled by four X4 connect port at Yarm Farm. The lights are lit when they received incoming message submitted from the website: connectinglight.info , as well as SMS messages <a class='more-link' href='http://connectinglight.info/vallum/'>Read More &raquo;</a></p>
-						</div>
-					</li>
-									<li class="post clearfix">
-						<a class="thumblink" href="http://connectinglight.info/vallum-farm-thursday/"><img src="http://connectinglight.info/wp-content/gallery/cache/482_crop_164x164_img_8809.jpg" alt="img_8809" title="Vallum Farm, England - Thursday" class="wp-post-image ngg-image-482 " /></a>
-						<div>
-							<h3><a href="http://connectinglight.info/vallum-farm-thursday/">Vallum Farm &#8211; England &#8211; Thursday</a></h3>
-							<p>photographer: Marcela</p>
-						</div>
-					</li>
-								</ul>
-			</div>
-			
-			<div class="partners">
-				<h2 class="lighter">Official Partners</h2>
-				<ul>
-										
-					<li>
-						<a href="http://www.ncl.ac.uk/culturelab/" target="_blank">
-							<img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/logos/culturelab.png" />
-						</a>
-					</li>
-					<li>
-						<a href="hadrians-wall.org" target="_blank">
-							<img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/logos/hadrian-un-combined.png" />
-						</a>
-					</li>
-					<li>
-						<a href="http://www.artscouncil.org.uk/" target="_blank">
-							<img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/logos/artscouncil.png" />
-						</a>
-					</li>
-					<li>
-						<a href="http://www.digi.com/" target="_blank">
-							<img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/logos/digi.png" />
-						</a>
-					</li>
-
-				</ul>
-
-				<div class="twit-widget">
-					<h2 class="lighter twitter">Twitter <a href="http://twitter.com/connectinglight" target="_blank" class="small">@connectinglight</a></h2>
-					<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-					<script>
-						new TWTR.Widget({
-							version: 2,
-							type: 'profile',
-							rpp: 4,
-							interval: 30000,
-							width: 'auto',
-							height: 300,
-							theme: {
-								shell: {
-									background: '#ffffff',
-									color: '#8c8c8c'
-								},
-								tweets: {
-									background: '#ffffff',
-									color: '#666666',
-									links: '#8accb0'
-								}
-							},
-							features: {
-								scrollbar: false,
-								loop: false,
-								live: false,
-								behavior: 'all'
-							}
-						}).render().setUser('connectinglight').start();
-					</script>
-				</div>
-			</div>
-
-		</div>
-	</div><!-- end inverted -->
 
 
 		</div>
 	</div>
 
 		<footer>	
-				<div>
-
-			<script>
-				page.features.push(function(app) {
-					app.runtime.signup = new page.classes.Signup({
-						selector: "#signup",
-						service_url: "http://connectinglight.info/wp-content/themes/connecting-lights/api/signup.php"
+				
+		<a href="/mobileapp" class="ca-button alt">
+			<span>Send a Message</span>
+		</a>
+		
+		<script>
+			page.features.push(function(app) {
+				var $e = $("#overview"),
+					$cont = $(".mobile-content > .inner")
+					$splash = $(".splash"),
+					$footer = $("footer"),
+					$modal = $("#send-message"),
+					$cancel = $(".cancel"),
+					$msgtrigger = $("#send-message-trigger");
+				
+				$msgtrigger.click(function(e) {
+					e.preventDefault();
+					// $("html, body").animate({ scrollTop: 0 }, "slow");
+					$splash.fadeOut();
+					$footer.fadeOut();
+					$cont.fadeOut("slow", function() {
+						$(this).empty().html($modal)	
+					}).fadeIn("slow", function() {
+						$("html, body").animate({ scrollTop: 0 }, "slow");
 					});
 				});
-			</script>
-
-			<div id="signup" class="signup clear">
-				<div class="step form">
-					<div class="tc-field signup-email">
-						<input type="text">
-					</div>
-					<div>
-						<a href="#" class="ca-button next"><span>Sign Up!</span></a>
-					</div>
-				</div>
-				<div class="step dispatch">
-					<div class="spinner">
-						<img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/spinner-bgEBEBEB.gif" alt="Loading">
-					</div>
-				</div>
-				<div class="step thank-you">
-					Thank you for signing up!
-				</div>
-			</div>
+				
+				$cancel.click(function(e) {
+					e.preventDefault();
+					location.reload();
+				});
+				
+			});
+		</script>
 		
-			<nav class="links">
-				<ul>
-					<li><a href=""><img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/sponsors/sponsor1.png" /></a></li>
-					<li><a href=""><img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/sponsors/sponsor2.png" /></a></li>
-					<li><a href=""><img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/sponsors/sponsor3.png" /></a></li>
-	
-					<li class="terms"><a href="http://connectinglight.info/terms-and-conditions/"><img src="http://connectinglight.info/wp-content/themes/connecting-lights/img/terms.png" /></a></li>
-				</ul>
-			</nav>
-
-		<p>Connecting Light is created by YesYesNo and commissioned by the London 2012 Festival and Hadrian's Wall Trust with support from Arts Council England. The Hadrian's Wall Trust is the delivery partner for the installation. For more information contact <a href="mailto:zach@yesyesno.com">zach@yesyesno.com</a>.</p>
-		
-		</div>
-		
-		<a href="http://festival.london2012.com/" class="banner"></a>		
 				
 	</footer>
 	
@@ -610,6 +444,6 @@ var JQLBSettings = {"fitToScreen":"0","resizeSpeed":"400","displayDownloadLink":
 </body>
 </html>
 
-<!-- Dynamic page generated in 0.591 seconds. -->
-<!-- Cached page generated by WP-Super-Cache on 2012-08-31 16:46:42 -->
+<!-- Dynamic page generated in 0.647 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2012-08-31 16:45:21 -->
 <!-- super cache -->

@@ -30,6 +30,7 @@
 
 	
 <!-- This site is optimized with the Yoast WordPress SEO plugin v1.2.7 - http://yoast.com/wordpress/seo/ -->
+<!-- Admin only notice: this page doesn't show a meta description because it doesn't have one, either write it for this page specifically or go into the SEO -> Titles menu and set up a template. -->
 <link rel="canonical" href="http://connectinglight.info/" />
 <meta property='og:locale' content='en_us'/>
 <meta property='og:title' content='Homepage - Connecting Light'/>
@@ -44,7 +45,9 @@
 <!-- / Yoast WordPress SEO plugin. -->
 
 <link rel="alternate" type="application/rss+xml" title="Connecting Light &raquo; Homepage Comments Feed" href="http://connectinglight.info/homepage/feed/" />
+<link rel='stylesheet' id='admin-bar-css'  href='http://connectinglight.info/wp-includes/css/admin-bar.css?ver=3.4.1' type='text/css' media='all' />
 <link rel='stylesheet' id='NextGEN-css'  href='http://connectinglight.info/wp-content/plugins/nextgen-gallery/css/nggallery.css?ver=1.0.0' type='text/css' media='screen' />
+<link rel='stylesheet' id='boxes-css'  href='http://connectinglight.info/wp-content/plugins/wordpress-seo/css/adminbar.css?ver=3.4.1' type='text/css' media='all' />
 <link rel='stylesheet' id='jquery.lightbox.min.css-css'  href='http://connectinglight.info/wp-content/plugins/wp-jquery-lightbox/styles/lightbox.min.css?ver=1.3.4' type='text/css' media='all' />
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 <script type='text/javascript' src='http://connectinglight.info/wp-content/plugins/nextgen-gallery/js/jquery.cycle.all.min.js?ver=2.9995'></script>
@@ -110,6 +113,11 @@
 	
 				}
 			</script><!-- <meta name="NextGEN" version="1.9.3" /> -->
+<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+<style type="text/css" media="screen">
+	html { margin-top: 28px !important; }
+	* html body { margin-top: 28px !important; }
+</style>
 
 	<!--<script src="http://connectinglight.info/wp-content/themes/connecting-lights/js/mods/less-1.3.0.min.js"></script> -->
 
@@ -146,7 +154,7 @@
 
 </head>
 
-<body class="home page page-id-344 page-template page-template-homepage-php">
+<body class="home page page-id-344 page-template page-template-homepage-php logged-in admin-bar">
 
 	
 	<div id="wrap">
@@ -267,13 +275,13 @@
 			
 		<script>
 				page.features.push(function(app) {
-					app.runtime.carousel_5040dc624966d = new page.classes.Carousel({
+					app.runtime.carousel_5040df72467b0 = new page.classes.Carousel({
 						app: app,
-						selector: "#carousel_5040dc624966d"
+						selector: "#carousel_5040df72467b0"
 					});
 				});
 			</script>
-		<div id="carousel_5040dc624966d" class="carousel autoscroll">
+		<div id="carousel_5040df72467b0" class="carousel autoscroll">
 			<div class="viewport">
 				
 				<!-- <div class="border">
@@ -561,13 +569,72 @@
 				
 	</footer>
 	
-	<script type='text/javascript'>
+	<script type='text/javascript' src='http://connectinglight.info/wp-includes/js/admin-bar.js?ver=3.4.1'></script>
+<script type='text/javascript'>
 /* <![CDATA[ */
 var JQLBSettings = {"fitToScreen":"0","resizeSpeed":"400","displayDownloadLink":"0","navbarOnTop":"0","loopImages":"","resizeCenter":"","marginSize":"","linkTarget":"_self","help":"","prevLinkTitle":"previous image","nextLinkTitle":"next image","prevLinkText":"\u00ab Previous","nextLinkText":"Next \u00bb","closeTitle":"close image gallery","image":"Image ","of":" of ","download":"Download"};
 /* ]]> */
 </script>
 <script type='text/javascript' src='http://connectinglight.info/wp-content/plugins/wp-jquery-lightbox/jquery.lightbox.min.js?ver=1.3.4.1'></script>
+	<script type="text/javascript">
+		(function() {
+			var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
 
+			request = true;
+
+			b[c] = b[c].replace( rcs, '' );
+			b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+		}());
+	</script>
+			<div id="wpadminbar" class="nojq nojs" role="navigation">
+			<div class="quicklinks">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+		<li id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item" tabindex="10" aria-haspopup="true" href="http://connectinglight.info/wp-admin/about.php" title="About WordPress"><span class="ab-icon"></span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-default" class="ab-submenu">
+		<li id="wp-admin-bar-about" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/about.php">About WordPress</a>		</li></ul><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+		<li id="wp-admin-bar-wporg" class=""><a class="ab-item" tabindex="10" href="http://wordpress.org/">WordPress.org</a>		</li>
+		<li id="wp-admin-bar-documentation" class=""><a class="ab-item" tabindex="10" href="http://codex.wordpress.org/">Documentation</a>		</li>
+		<li id="wp-admin-bar-support-forums" class=""><a class="ab-item" tabindex="10" href="http://wordpress.org/support/">Support Forums</a>		</li>
+		<li id="wp-admin-bar-feedback" class=""><a class="ab-item" tabindex="10" href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-site-name" class="menupop"><a class="ab-item" tabindex="10" aria-haspopup="true" href="http://connectinglight.info/wp-admin/">Connecting Light</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-site-name-default" class="ab-submenu">
+		<li id="wp-admin-bar-dashboard" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/">Dashboard</a>		</li></ul><ul id="wp-admin-bar-appearance" class=" ab-submenu">
+		<li id="wp-admin-bar-themes" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/themes.php">Themes</a>		</li>
+		<li id="wp-admin-bar-customize" class=" hide-if-no-customize"><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/customize.php?url=http%3A%2F%2Fconnectinglight.info%2F">Customize</a>		</li>
+		<li id="wp-admin-bar-menus" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/nav-menus.php">Menus</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-updates" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/update-core.php" title="2 Plugin Updates"><span class="ab-icon"></span><span class="ab-label">2</span></a>		</li>
+		<li id="wp-admin-bar-comments" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/edit-comments.php" title="1 comment awaiting moderation"><span class="ab-icon"></span><span id="ab-awaiting-mod" class="ab-label awaiting-mod pending-count count-1">1</span></a>		</li>
+		<li id="wp-admin-bar-new-content" class="menupop"><a class="ab-item" tabindex="10" aria-haspopup="true" href="http://connectinglight.info/wp-admin/post-new.php" title="Add New"><span class="ab-icon"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-new-content-default" class="ab-submenu">
+		<li id="wp-admin-bar-new-post" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/post-new.php">Post</a>		</li>
+		<li id="wp-admin-bar-new-media" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/media-new.php">Media</a>		</li>
+		<li id="wp-admin-bar-new-link" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/link-add.php">Link</a>		</li>
+		<li id="wp-admin-bar-new-page" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/post-new.php?post_type=page">Page</a>		</li>
+		<li id="wp-admin-bar-new-partner" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/post-new.php?post_type=partner">Partner</a>		</li>
+		<li id="wp-admin-bar-new-user" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/user-new.php">User</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-edit" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/post.php?post=344&#038;action=edit">Edit Page</a>		</li>
+		<li id="wp-admin-bar-wpseo-menu" class="menupop"><a class="ab-item" tabindex="10" aria-haspopup="true" href="http://connectinglight.info/wp-admin/post.php?post=344&#038;action=edit">SEO<div alt="Na" title="Na" class="wpseo_score_img na "></div></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wpseo-menu-default" class="ab-submenu">
+		<li id="wp-admin-bar-wpseo-kwresearch" class="menupop"><div class="ab-item ab-empty-item" tabindex="10" aria-haspopup="true">Keyword Research</div><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wpseo-kwresearch-default" class="ab-submenu">
+		<li id="wp-admin-bar-wpseo-adwordsexternal" class=""><a class="ab-item" tabindex="10" href="https://adwords.google.com/select/KeywordToolExternal" target="_blank">AdWords External</a>		</li>
+		<li id="wp-admin-bar-wpseo-googleinsights" class=""><a class="ab-item" tabindex="10" href="http://www.google.com/insights/search/#q=&#038;cmpt=q" target="_blank">Google Insights</a>		</li>
+		<li id="wp-admin-bar-wpseo-wordtracker" class=""><a class="ab-item" tabindex="10" href="http://tools.seobook.com/keyword-tools/seobook/?keyword=" target="_blank">SEO Book</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-wpseo-analysis" class="menupop"><div class="ab-item ab-empty-item" tabindex="10" aria-haspopup="true">Analyze this page</div><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wpseo-analysis-default" class="ab-submenu">
+		<li id="wp-admin-bar-wpseo-inlinks-ose" class=""><a class="ab-item" tabindex="10" href="http://www.opensiteexplorer.org/connectinglight.info%252F/a!links" target="_blank">Check Inlinks (OSE)</a>		</li>
+		<li id="wp-admin-bar-wpseo-kwdensity" class=""><a class="ab-item" tabindex="10" href="http://tools.davidnaylor.co.uk/keyworddensity/index.php?url=http://connectinglight.info/&#038;keyword=" target="_blank">Check Keyword Density</a>		</li>
+		<li id="wp-admin-bar-wpseo-cache" class=""><a class="ab-item" tabindex="10" href="http://webcache.googleusercontent.com/search?strip=1&#038;q=cache:http://connectinglight.info/" target="_blank">Check Google Cache</a>		</li>
+		<li id="wp-admin-bar-wpseo-header" class=""><a class="ab-item" tabindex="10" href="http://quixapp.com/headers/?r=http%3A%2F%2Fconnectinglight.info%2F" target="_blank">Check Headers</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-wpseo-settings" class="menupop"><a class="ab-item" tabindex="10" aria-haspopup="true" href="http://connectinglight.info/wp-admin/admin.php?page=wpseo_titles">SEO Settings</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wpseo-settings-default" class="ab-submenu">
+		<li id="wp-admin-bar-wpseo-titles" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/admin.php?page=wpseo_titles">Titles & Metas</a>		</li>
+		<li id="wp-admin-bar-wpseo-social" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/admin.php?page=wpseo_social">Social</a>		</li>
+		<li id="wp-admin-bar-wpseo-xml" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/admin.php?page=wpseo_xml">XML Sitemaps</a>		</li>
+		<li id="wp-admin-bar-wpseo-permalinks" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/admin.php?page=wpseo_permalinks">Permalinks</a>		</li>
+		<li id="wp-admin-bar-wpseo-internal-links" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/admin.php?page=wpseo_internal-links">Internal Links</a>		</li>
+		<li id="wp-admin-bar-wpseo-rss" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/admin.php?page=wpseo_rss">RSS</a>		</li></ul></div>		</li></ul></div>		</li></ul><ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+		<li id="wp-admin-bar-search" class=" admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="http://connectinglight.info/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" tabindex="10" type="text" value="" maxlength="150" /><input type="submit" class="adminbar-button" value="Search"/></form></div>		</li>
+		<li id="wp-admin-bar-my-account" class="menupop"><a class="ab-item" tabindex="10" aria-haspopup="true" href="http://connectinglight.info/wp-admin/profile.php" title="My Account">Howdy, admin</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-user-actions" class=" ab-submenu">
+		<li id="wp-admin-bar-user-info" class=""><a class="ab-item" tabindex="-1" href="http://connectinglight.info/wp-admin/profile.php"><span class='display-name'>admin</span></a>		</li>
+		<li id="wp-admin-bar-edit-profile" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-admin/profile.php">Edit My Profile</a>		</li>
+		<li id="wp-admin-bar-logout" class=""><a class="ab-item" tabindex="10" href="http://connectinglight.info/wp-login.php?action=logout&#038;_wpnonce=69b720a448">Log Out</a>		</li></ul></div>		</li></ul>			</div>
+		</div>
+
+		
 	<!-- typecode-js -->
 	<script src="http://connectinglight.info/wp-content/themes/connecting-lights/js/lib/lib/tc.seed.js"></script>
 	<script src="http://connectinglight.info/wp-content/themes/connecting-lights/js/lib/lib/tc.app.js"></script>
@@ -610,6 +677,5 @@ var JQLBSettings = {"fitToScreen":"0","resizeSpeed":"400","displayDownloadLink":
 </body>
 </html>
 
-<!-- Dynamic page generated in 0.591 seconds. -->
-<!-- Cached page generated by WP-Super-Cache on 2012-08-31 16:46:42 -->
-<!-- super cache -->
+<!-- Dynamic page generated in 0.721 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2012-08-31 16:59:46 -->
