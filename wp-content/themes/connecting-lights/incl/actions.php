@@ -8,7 +8,7 @@
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
 			color_picker_src: "<?php bloginfo("template_url"); ?>/img/color-picker.png",
-			//service_url: "/connecting-lights-backend/messages.json"
+			service_url: "/connecting-lights-backend/messages.json"
 		});
 	});
 </script>
