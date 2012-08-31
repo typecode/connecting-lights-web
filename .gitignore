@@ -37,3 +37,4 @@ wp-content/uploads/
 /wp-includes-3.4/
 
 /.DS_Store
+/wp-content/cache
