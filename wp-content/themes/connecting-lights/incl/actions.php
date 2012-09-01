@@ -129,12 +129,22 @@
 				$visit_url = "#";
 			}
 		?>
-		<a href="<?php echo $visit_url; ?>">
-			<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" alt="Purchase Tickets" />
+		<?php if (CL_IS_LIVE && !CL_IS_LIVE_STREAM_PAGE && !CL_MOBILE) : ?>
+		<a href="#">
+			<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" onclick="window.open('http://connecting-light.herokuapp.com/viz/map', '_blank', 'width=1343, height=700');"/>
 			<div>
-				<small>help</small> volunteer
+				<small>vizualize</small> the wall
 			</div>
 		</a>
+		<?php else : ?>
+		<a href="<?php echo $visit_url; ?>">
+			<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" alt="Purchase Tickets"/>
+			<div>
+				<small>watch</small> volunteer
+			</div>
+		</a>
+		<?php endif; ?>
+		
 		<a href="<?php echo $visit_url; ?>">
 			<img src="<?php bloginfo("template_url"); ?>/img/biglink_3.png" alt="Find Locations" />
 			<div>
