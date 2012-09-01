@@ -37,7 +37,7 @@ $ossdlcdn = 0;
 // Array of files that have 'wp-' but should still be cached 
 $cache_acceptable_files = array( 'wp-comments-popup.php', 'wp-links-opml.php', 'wp-locations.php' );
 
-$cache_rejected_uri = array('wp-.*\\.php', 'index\\.php');
+$cache_rejected_uri = array ( 0 => 'wp-.*\\.php', 1 => 'index\\.php', ); //Added by WP-Cache Manager
 $cache_rejected_user_agent = array ( 0 => 'bot', 1 => 'ia_archive', 2 => 'slurp', 3 => 'crawl', 4 => 'spider', 5 => 'Yandex' );
 
 $cache_rebuild_files = 1; //Added by WP-Cache Manager
@@ -84,7 +84,7 @@ $wp_cache_pages[ "search" ] = 0; //Added by WP-Cache Manager
 $wp_cache_pages[ "feed" ] = 0; //Added by WP-Cache Manager
 $wp_cache_pages[ "category" ] = 0; //Added by WP-Cache Manager
 $wp_cache_pages[ "home" ] = 1; //Added by WP-Cache Manager
-$wp_cache_pages[ "frontpage" ] = 0; //Added by WP-Cache Manager
+$wp_cache_pages[ "frontpage" ] = 1; //Added by WP-Cache Manager
 $wp_cache_pages[ "tag" ] = 0; //Added by WP-Cache Manager
 $wp_cache_pages[ "archives" ] = 0; //Added by WP-Cache Manager
 $wp_cache_pages[ "pages" ] = 0; //Added by WP-Cache Manager
