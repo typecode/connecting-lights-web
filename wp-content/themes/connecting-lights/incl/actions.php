@@ -107,7 +107,7 @@
 	<a href="#" class="watch-live-trigger">
 		<img src="<?php bloginfo("template_url"); ?>/img/biglink_1.png" alt="Watch Live" />
 		<div>
-			<small>watch</small> live
+			<small>watch live and</small> send message
 		</div>
 	</a>
 	<?php else : ?>
