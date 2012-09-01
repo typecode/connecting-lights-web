@@ -167,8 +167,8 @@
 							// if we are in live stream mode,
 							// attach the geo coords pointing to Steel Rigg
 
-							d["message[latitude]"] = "55.002991";
-							d["message[longitude]"] = "-2.390963";
+							d["message[latitude]"] = "54.990021";
+							d["message[longitude]"] = "";
 						}
 						return d;
 					}())
