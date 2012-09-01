@@ -130,8 +130,8 @@
 			}
 		?>
 		<?php if (CL_IS_LIVE && !CL_IS_LIVE_STREAM_PAGE && !CL_MOBILE) : ?>
-		<a href="#">
-			<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" onclick="window.open('http://connecting-light.herokuapp.com/viz/map', '_blank', 'width=1343, height=700');"/>
+		<a href="#"  onClick="window.open('http://connecting-light.herokuapp.com/viz/map', '_blank', 'width=1343, height=700');">
+			<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png"/>
 			<div>
 				<small>vizualize</small> the wall
 			</div>
