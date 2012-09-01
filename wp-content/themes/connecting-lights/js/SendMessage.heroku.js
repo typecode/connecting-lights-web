@@ -168,7 +168,7 @@
 							// attach the geo coords pointing to Steel Rigg
 
 							d["message[latitude]"] = "54.990021";
-							d["message[longitude]"] = "";
+							d["message[longitude]"] = "-2.603127";
 						}
 						return d;
 					}())
